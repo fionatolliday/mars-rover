@@ -13,7 +13,7 @@ public class RoverTest {
     @Test
     public void roverIsOnMarsAt00FacingNorth(Position x, Position y, Facing n) {
         Mars mars = new Mars();
-        assert.AssertTrue(mars.printroverlocation);
+        assert.AssertTrue(mars.printRoverlocation);
     }
 
     @Test
