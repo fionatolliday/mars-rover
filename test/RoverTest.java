@@ -63,4 +63,13 @@ public class RoverTest {
 
         assert.AssertTrue(rover.turnNorth);
     }
+
+    @Test
+    public void roverDetectsAnObstacleAtNextCommand() {
+        
+    }
+
+    @Test
+    public void roverReportsAnObstacle() {
+    }
 }
