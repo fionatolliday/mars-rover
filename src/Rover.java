@@ -1,20 +1,36 @@
 public class Rover {
 
-    private String facingDirection;
+    private Rover rover;
+
+    private int positionX;
+    private int positionY;
+    private char facingDirection;
+
 
     public Rover getRover() {
         return rover;
     }
 
-    public String whichWayIsRoverFacing() {
-        return facingDirection;
+
+    public String roversStartingPosition() {
+        String startingPosition="";
+        startingPosition += positionX + ",";
+        startingPosition += positionY + ",";
+        startingPosition += facingDirection;
+        return startingPosition;
     }
 
-    //method to change facing direction
 
-    public Rover rover;
 
-    public Rover(){
-        this.rover = rover;
+
+//    public String changeFacingDirectionOfRover(){
+//
+//    }
+
+
+    public Rover() {
+        this.positionX = 0;
+        this.positionY = 0;
+        this.facingDirection = 'N';
     }
 }

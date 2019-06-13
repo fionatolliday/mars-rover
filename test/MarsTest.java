@@ -5,10 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MarsTest {
-    @Before
-    public void setUp() throws Exception {
-        Mars mars = new Mars();
-    }
 
 
     @Test

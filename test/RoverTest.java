@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,11 +9,19 @@ public class RoverTest {
         Rover rover = new Rover();
     }
 
-//    @Test
-//    public void roverIsOnMarsAt00FacingNorth(Position x, Position y, Facing n) {
-//        MarsTest mars = new MarsTest();
-//        assert.AssertTrue(mars.printRoverlocation);
-//    }
+
+
+    @Test
+    public void roverIsOnMarsAt00FacingNorth() {
+        Rover rover = new Rover();
+
+        String expectedPosition ="0,0,N";
+
+        Assert.assertEquals(expectedPosition, rover.roversStartingPosition());
+
+    }
+
+
 //
 //    @Test
 //    public void roverCanMoveLeft(Command) {
