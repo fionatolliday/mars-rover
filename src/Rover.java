@@ -56,23 +56,22 @@ public class Rover {
     }
 
 
-    public String changeFacingDirectionOfRover(char command){
-        facingDirection = 'N';
-        if (command == 'L' && facingDirection =='N'){
+    public String changeFacingDirectionOfRover(char command) {
+        if (command == 'L' && facingDirection == 'N') {
             facingDirection = 'W';
-        } else if (command == 'R' && facingDirection=='N'){
+        } else if (command == 'R' && facingDirection == 'N') {
             facingDirection = 'E';
-        } else if (command == 'L' && facingDirection=='E') {
+        } else if (command == 'L' && facingDirection == 'E') {
             facingDirection = 'N';
-        } else if (command == 'R' && facingDirection=='E'){
+        } else if (command == 'R' && facingDirection == 'E') {
             facingDirection = 'S';
-        } else if (command == 'L' && facingDirection=='S') {
+        } else if (command == 'L' && facingDirection == 'S') {
             facingDirection = 'E';
-        } else if (command == 'R' && facingDirection=='S') {
+        } else if (command == 'R' && facingDirection == 'S') {
             facingDirection = 'W';
-        } else if (command == 'L' && facingDirection=='W') {
+        } else if (command == 'L' && facingDirection == 'W') {
             facingDirection = 'S';
-        } else if (command == 'W' && facingDirection=='S') {
+        } else if (command == 'W' && facingDirection == 'S') {
             facingDirection = 'N';
         }
         return roversStartingPosition();
