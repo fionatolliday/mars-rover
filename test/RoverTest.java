@@ -10,43 +10,49 @@ public class RoverTest {
     }
 
 
-
     @Test
     public void roverIsOnMarsAt00FacingNorth() {
         Rover rover = new Rover();
 
-        String expectedPosition ="0,0,N";
+        String expectedPosition = "0,0,N";
 
         Assert.assertEquals(expectedPosition, rover.roversStartingPosition());
-
     }
 
 
-//
-//    @Test
-//    public void roverCanMoveLeft(Command) {
-//
-//        assert.AssertTrue(rover.moveleft);
-//    }
-//
-//    @Test
-//    public void roverCanMoveRight(Command) {
-//
-//        assert.AssertTrue(rover.moveright);
-//    }
-//
-//    @Test
-//    public void roverCanMoveForward(Command) {
-//
-//        assert.AssertTrue(rover.moveForward);
-//    }
-//
-//    @Test
-//    public void roverCanMoveBackwards(Command) {
-//
-//        assert.AssertTrue(rover.moveBack);
-//    }
-//
+    @Test
+    public void roverCanMoveLeft() {
+
+        Rover rover = new Rover();
+
+        String expectedPosition ="0,-1";
+        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('L'));
+    }
+
+    @Test
+    public void roverCanMoveRight() {
+        Rover rover = new Rover();
+
+        String expectedPosition ="0,1";
+        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('R'));
+    }
+
+    @Test
+    public void roverCanMoveForward() {
+        Rover rover = new Rover();
+
+        String expectedPosition ="-1,0";
+        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('F'));
+    }
+
+    @Test
+    public void roverCanMoveBackwards() {
+        Rover rover = new Rover();
+
+        String expectedPosition ="1,0";
+        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('B'));
+    }
+
 //    @Test
 //    public void roverCanTurnSouth() {
 //

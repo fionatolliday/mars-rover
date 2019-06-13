@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc4fd530-97ac-4279-9d32-b5972bde1e8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MarsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MarsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/RoverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/RoverTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,6 +11,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MarsRover$RoverTest.ic" NAME="RoverTest Coverage Results" MODIFIED="1560389574149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="MarsRover" />
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Rover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+            <state relative-caret-position="488">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
               <folding>
                 <element signature="e#50#51#0" expanded="true" />
                 <element signature="e#78#79#0" expanded="true" />
@@ -79,14 +79,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="1122">
+              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CommandEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="11" selection-start-column="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -112,14 +121,17 @@
         <option value="$PROJECT_DIR$/test/MarsTest.java" />
         <option value="$PROJECT_DIR$/src/FacingDirection.java" />
         <option value="$PROJECT_DIR$/src/Location.java" />
-        <option value="$PROJECT_DIR$/src/Rover.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Commands.java" />
+        <option value="$PROJECT_DIR$/src/CommandEnum.java" />
         <option value="$PROJECT_DIR$/test/RoverTest.java" />
+        <option value="$PROJECT_DIR$/src/Rover.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="x" value="-45" />
+    <option name="y" value="92" />
     <option name="width" value="1680" />
     <option name="height" value="947" />
   </component>
@@ -158,7 +170,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560389016573" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560396515452" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -186,39 +198,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RoverTest.roverIsOnMarsAt00FacingNorth">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.RoverTest.roverCanMoveBackwards">
+    <configuration name="RoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MarsTest.printsOutEmptyMarsGrid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoverTest.roverCanMoveBackwards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MarsTest" />
-      <option name="METHOD_NAME" value="printsOutEmptyMarsGrid" />
+      <option name="MAIN_CLASS_NAME" value="RoverTest" />
+      <option name="METHOD_NAME" value="roverCanMoveBackwards" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoverTest.roverCanMoveForward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoverTest" />
-      <option name="METHOD_NAME" value="roverIsOnMarsAt00FacingNorth" />
+      <option name="METHOD_NAME" value="roverCanMoveForward" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoverTest.roversStartingPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoverTest.roverCanMoveLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoverTest" />
-      <option name="METHOD_NAME" value="roversStartingPosition" />
+      <option name="METHOD_NAME" value="roverCanMoveLeft" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoverTest.roverCanMoveRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarsRover" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverTest" />
+      <option name="METHOD_NAME" value="roverCanMoveRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -226,10 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RoverTest.roverIsOnMarsAt00FacingNorth" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.RoverTest.roversStartingPosition" />
-        <item itemvalue="JUnit.MarsTest.printsOutEmptyMarsGrid" />
+        <item itemvalue="JUnit.RoverTest.roverCanMoveBackwards" />
+        <item itemvalue="JUnit.RoverTest.roverCanMoveForward" />
+        <item itemvalue="JUnit.RoverTest.roverCanMoveRight" />
+        <item itemvalue="JUnit.RoverTest.roverCanMoveLeft" />
+        <item itemvalue="JUnit.RoverTest" />
       </list>
     </recent_temporary>
   </component>
@@ -247,35 +272,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RoverTest_roverIsOnMarsAt00FacingNorth - 2019.06.13 at 10h 35m 53s.xml">
-      <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 05m 11s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 44m 01s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 05m 21s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 45m 05s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 16m 06s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 45m 23s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 16m 24s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 45m 55s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 17m 08s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 47m 15s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 17m 17s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roversStartingPosition - 2019.06.13 at 10h 47m 31s.xml">
-      <configuration name="RoverTest.roversStartingPosition" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveLeft - 2019.06.13 at 13h 17m 25s.xml">
+      <configuration name="RoverTest.roverCanMoveLeft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roverIsOnMarsAt00FacingNorth - 2019.06.13 at 10h 57m 46s.xml">
-      <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveRight - 2019.06.13 at 13h 18m 26s.xml">
+      <configuration name="RoverTest.roverCanMoveRight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roverIsOnMarsAt00FacingNorth - 2019.06.13 at 11h 23m 24s.xml">
-      <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveForward - 2019.06.13 at 13h 19m 13s.xml">
+      <configuration name="RoverTest.roverCanMoveForward" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoverTest_roverIsOnMarsAt00FacingNorth - 2019.06.13 at 11h 23m 31s.xml">
-      <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" configurationId="JUnit" />
+    <history-entry file="RoverTest_roverCanMoveBackwards - 2019.06.13 at 13h 19m 43s.xml">
+      <configuration name="RoverTest.roverCanMoveBackwards" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -286,8 +311,8 @@
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
-      <window_info id="Favorites" sideWeight="0.5007752" side_tool="true" visible="true" weight="0.24969475" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992248" visible="true" weight="0.24969475" />
+      <window_info active="true" id="Favorites" sideWeight="0.5007429" side_tool="true" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925706" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -295,7 +320,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32982457" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24561404" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2128655" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,6 +330,7 @@
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -342,17 +368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding>
-            <element signature="e#50#51#0" expanded="true" />
-            <element signature="e#78#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -360,12 +375,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="1122">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="e#50#51#0" expanded="true" />
+            <element signature="e#78#79#0" expanded="true" />
           </folding>
         </state>
       </provider>

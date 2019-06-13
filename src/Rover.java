@@ -13,14 +13,40 @@ public class Rover {
 
 
     public String roversStartingPosition() {
-        String startingPosition="";
+        String startingPosition = "";
         startingPosition += positionX + ",";
         startingPosition += positionY + ",";
         startingPosition += facingDirection;
         return startingPosition;
     }
 
+    public String moveRoverLeftRightBackOrForward(char command) {
+        String roverPosition = "";
 
+        if (command == 'L') {
+            positionY -= 1;
+            roverPosition += positionX + ",";
+            roverPosition += positionY;
+            return roverPosition;
+        } else if (command == 'R') {
+            positionY += 1;
+            roverPosition += positionX + ",";
+            roverPosition += positionY;
+            return roverPosition;
+        } else if (command == 'B') {
+            positionX += 1;
+            roverPosition += positionX + ",";
+            roverPosition += positionY;
+            return roverPosition;
+        } else if (command == 'F') {
+            positionX -= 1;
+            roverPosition += positionX + ",";
+            roverPosition += positionY;
+            return roverPosition;
+        }
+        return roverPosition;
+
+    }
 
 
 //    public String changeFacingDirectionOfRover(){
