@@ -5,24 +5,24 @@ import java.util.Scanner;
 public class Commands {
 
 
-    Scanner getInput = new Scanner(System.in);  // Create a Scanner object
-    public void gainUserCommandAsString(){
-        System.out.println("Using capital letters and seperated by a comma, enter your commands " +
-                "for example F,B,L,R" );
-        String commandInputString = getInput.nextLine();  // Read user input
-        System.out.println(commandInputString);
+    Scanner getInput = new Scanner(System.in);
+    String commandInputString;
+
+    public void gainUserCommandAsString() {
+        System.out.println("Using capital letters, please enter your commands " +
+                "for example FBLR");
+        commandInputString = getInput.nextLine();
     }
 
-    public char singleCommand() {
-        List<Character> commands = new ArrayList<>();
-        commands.add('F');
-        commands.add('B');
+    public List<Character> arrayOfCommands() {
+        List<Character> arrOfcommands = new ArrayList<>();
 
-        char command = 'N';
-        for (int i = 0; i < commands.size(); i++){
-            command = commands.get(i);
-            return command;
+        for (int i = 0; i < commandInputString.length(); i++) {
+            arrOfcommands.add(commandInputString.charAt(i));
         }
-       return command;
+        return arrOfcommands;
     }
 }
+
+//        for (char command : userCommands){
+//            return command;

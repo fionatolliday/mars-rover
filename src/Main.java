@@ -12,12 +12,9 @@ public class Main {
 
         System.out.println("Rover has landed on Mars at position " + rover.roversStartingPosition() + ". \n");
         commands.gainUserCommandAsString();
+        System.out.println(commands.arrayOfCommands());
 
 
-//        char[] userCommands = commandInputString. toCharArray();
-//
-//        for (char command : userCommands){
-//            return command;
     }
 
 
