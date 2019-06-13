@@ -6,6 +6,11 @@ public class Rover {
     private int positionY;
     private char facingDirection;
 
+    char north = 'N';
+    char east = 'E';
+    char south = 'S';
+    char west = 'W';
+
 
     public Rover getRover() {
         return rover;
@@ -20,9 +25,11 @@ public class Rover {
         return startingPosition;
     }
 
+    Commands commands = new Commands();
+
+
     public String moveRoverLeftRightBackOrForward(char command) {
         String roverPosition = "";
-
         if (command == 'L') {
             positionY -= 1;
             roverPosition += positionX + ",";
@@ -49,9 +56,27 @@ public class Rover {
     }
 
 
-//    public String changeFacingDirectionOfRover(){
-//
-//    }
+    public String changeFacingDirectionOfRover(char command){
+        facingDirection = 'E';
+        if (command == 'L' && facingDirection =='N'){
+            facingDirection = 'W';
+        } else if (command == 'R' && facingDirection=='N'){
+            facingDirection = 'E';
+        } if (command == 'L' && facingDirection=='E') {
+            facingDirection = 'N';
+        } else if (command == 'R' && facingDirection=='E'){
+            facingDirection = 'S';
+        } if (command == 'L' && facingDirection=='S') {
+            facingDirection = 'E';
+        } else if (command == 'R' && facingDirection=='S') {
+            facingDirection = 'W';
+        } if (command == 'L' && facingDirection=='W') {
+            facingDirection = 'S';
+        } else if (command == 'W' && facingDirection=='S') {
+            facingDirection = 'N';
+        }
+        return roversStartingPosition();
+    }
 
 
     public Rover() {
