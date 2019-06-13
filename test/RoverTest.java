@@ -58,16 +58,18 @@ public class RoverTest {
     public void roverCanTurnLeft() {
         Rover rover = new Rover();
 
-        String expectedFacing = "0,0,N";
+        String expectedFacing = "0,0,W";
         Assert.assertEquals(expectedFacing, rover.changeFacingDirectionOfRover('L'));
 
     }
-//
-//    @Test
-//    public void roverCanTurnRight() {
-//
-//        assert.AssertTrue(rover.turnEast);
-//    }
+
+    @Test
+    public void roverCanTurnRight() {
+        Rover rover = new Rover();
+
+        String expectedFacing = "0,0,E";
+        Assert.assertEquals(expectedFacing, rover.changeFacingDirectionOfRover('R'));
+    }
 //
 //
 //    @Test
