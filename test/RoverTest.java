@@ -21,44 +21,26 @@ public class RoverTest {
 
 
     @Test
-    public void roverCanMoveLeft() {
-
-        Rover rover = new Rover();
-
-        String expectedPosition ="0,-1";
-        Assert.assertEquals(expectedPosition,
-                rover.moveRoverLeftRightBackOrForward('L'));
-    }
-
-    @Test
-    public void roverCanMoveRight() {
-        Rover rover = new Rover();
-
-        String expectedPosition ="0,1";
-        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('R'));
-    }
-
-    @Test
     public void roverCanMoveForward() {
         Rover rover = new Rover();
 
-        String expectedPosition ="-1,0";
-        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('F'));
+        String expectedPosition = "-1,0";
+        Assert.assertEquals(expectedPosition, rover.moveRoverBackOrForward('F'));
     }
 
     @Test
     public void roverCanMoveBackwards() {
         Rover rover = new Rover();
 
-        String expectedPosition ="1,0";
-        Assert.assertEquals(expectedPosition, rover.moveRoverLeftRightBackOrForward('B'));
+        String expectedPosition = "1,0";
+        Assert.assertEquals(expectedPosition, rover.moveRoverBackOrForward('B'));
     }
 
     @Test
     public void roverCanTurnLeft() {
         Rover rover = new Rover();
 
-        String expectedFacing = "0,0,W";
+        char expectedFacing = 'W';
         Assert.assertEquals(expectedFacing, rover.changeFacingDirectionOfRover('L'));
 
     }
@@ -67,17 +49,18 @@ public class RoverTest {
     public void roverCanTurnRight() {
         Rover rover = new Rover();
 
-        String expectedFacing = "0,0,E";
+        String expectedFacing = "E";
         Assert.assertEquals(expectedFacing, rover.changeFacingDirectionOfRover('R'));
     }
-//
-//
-//    @Test
-//    public void roverDetectsAnObstacleAtNextCommand() {
-//
-//    }
-//
+
+
+
 //    @Test
 //    public void roverReportsAnObstacle() {
+//
+//        Rover rover = new Rover();
+//
+//
+//        Assert.assertEquals();
 //    }
 }

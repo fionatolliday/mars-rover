@@ -20,11 +20,12 @@ public class MarsTest {
         assertEquals(expectedMarsGrid, actualMarsGrid);
     }
 
-//    @Test
-//    public void marsHasAnObstacleAtLocation() {
-//
-//        assert.AssertTrue(mars.printObstacle);
-//    }
+    @Test
+    public void marsHasAnObstacleAtLocation() {
+        Mars mars = new Mars();
+
+        Assert.assertTrue(mars.thereIsAnObstacleAtPosition(0,2));
+    }
 }
 
 

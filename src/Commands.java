@@ -9,20 +9,36 @@ public class Commands {
     String commandInputString;
 
     public void gainUserCommandAsString() {
-        System.out.println("Using capital letters, please enter your commands " +
-                "for example FBLR");
+        System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
+                "backwards (B).  \n Using capital letters, please enter your commands.  " +
+                "\n" +
+                "As " +
+                "an example, It should look something like this: FFLBLRBF");
         commandInputString = getInput.nextLine();
     }
 
-    public List<Character> arrayOfCommands() {
-        List<Character> arrOfcommands = new ArrayList<>();
+
+    List<Character> arrOfcommands = new ArrayList<>();
+
+    public List<Character> arrayOfCommands(String commandInputString) {
 
         for (int i = 0; i < commandInputString.length(); i++) {
             arrOfcommands.add(commandInputString.charAt(i));
         }
         return arrOfcommands;
     }
+
+//    public void singleCommand(List<Character> arrOfCommands) {
+//        char command = 'N';
+//        for (int i = 0; i < arrOfCommands.size(); i++) {
+//
+//        }
+//        System.out.println(command);
+////            return command;
+
+
+
+
+
 }
 
-//        for (char command : userCommands){
-//            return command;
