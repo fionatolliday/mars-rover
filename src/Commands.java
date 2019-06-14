@@ -28,17 +28,5 @@ public class Commands {
         return arrOfcommands;
     }
 
-//    public void singleCommand(List<Character> arrOfCommands) {
-//        char command = 'N';
-//        for (int i = 0; i < arrOfCommands.size(); i++) {
-//
-//        }
-//        System.out.println(command);
-////            return command;
-
-
-
-
-
 }
 

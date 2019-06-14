@@ -4,18 +4,16 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class CommandsTest {
+
+    Commands commands = new Commands();
 
     @Test
     public void takesUserInputAndPutsIntoArrayOfCharacters() {
-        Commands commands = new Commands();
-
-        List<Character> expected = Arrays.asList('F', 'B', 'L', 'R');
+        List<Character> expectedArrayOfCommands = Arrays.asList('F', 'B', 'L', 'R');
         List<Character> actual = commands.arrayOfCommands("FBLR");
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expectedArrayOfCommands, actual);
     }
 
 }

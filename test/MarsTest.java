@@ -24,7 +24,7 @@ public class MarsTest {
     public void marsHasAnObstacleAtLocation() {
         Mars mars = new Mars();
 
-        Assert.assertTrue(mars.thereIsAnObstacleAtPosition(0,2));
+        Assert.assertTrue(mars.thereIsAnObstacleAtPosition(0, 2));
     }
 }
 
