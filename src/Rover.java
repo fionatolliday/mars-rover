@@ -5,11 +5,13 @@ public class Rover {
     private int positionX;
     private int positionY;
     private char facingDirection;
-    
+    private String roverPosition;
+
     public Rover() {
         this.positionX = 0;
         this.positionY = 0;
         this.facingDirection = 'N';
+        this.roverPosition = "";
     }
 
     public String roversStartingPosition() {
@@ -22,28 +24,29 @@ public class Rover {
 
 
     public char changeFacingDirectionOfRover(char command) {
-        if (command == 'L' && facingDirection == 'N') {
-            facingDirection = 'W';
-        } else if (command == 'R' && facingDirection == 'N') {
-            facingDirection = 'E';
-        } else if (command == 'L' && facingDirection == 'E') {
-            facingDirection = 'N';
-        } else if (command == 'R' && facingDirection == 'E') {
-            facingDirection = 'S';
-        } else if (command == 'L' && facingDirection == 'S') {
-            facingDirection = 'E';
-        } else if (command == 'R' && facingDirection == 'S') {
-            facingDirection = 'W';
-        } else if (command == 'L' && facingDirection == 'W') {
-            facingDirection = 'S';
-        } else if (command == 'W' && facingDirection == 'S') {
-            facingDirection = 'N';
-        }
-        return facingDirection;
+        if (command == 'L') {
+            if (facingDirection == 'N') {
+                facingDirection = 'W';
+            } else if (facingDirection == 'E') {
+                facingDirection = 'N';
+            } else if (facingDirection == 'S') {
+                facingDirection = 'E';
+            } else if (facingDirection == 'W') {
+                facingDirection = 'S';
+            }
+        } else if (command == 'R') {
+            if(facingDirection == 'N') {
+                facingDirection = 'E';
+            }else if(facingDirection == 'E'){
+                facingDirection = 'S';
+            } else if (facingDirection == 'S'){
+                facingDirection = 'W';
+            } else if (facingDirection == 'W'){
+                facingDirection = 'N';
+            }
+        } return facingDirection;
     }
 
-
-    String roverPosition = "";
 
     public String moveRoverBackOrForward(char command) {
 
@@ -148,7 +151,6 @@ public class Rover {
         }
 
     }
-
 
 
 }
