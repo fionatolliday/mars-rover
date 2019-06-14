@@ -53,41 +53,81 @@ public class Rover {
 
         if (command == 'B' && facingDirection == 'N') {
             positionX += 1;
+            if (positionX > mars.heightOfMarsX){
+                positionX = 0;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'N') {
             positionX -= 1;
+            if (positionX < mars.heightOfMarsX){
+                positionX = 2;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'S') {
             positionX -= 1;
+            if (positionX < mars.heightOfMarsX){
+                positionX = 2;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'S') {
             positionX += 1;
+            if (positionX > mars.heightOfMarsX){
+                positionX = 0;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'E') {
             positionY -= 1;
+            if (positionY < mars.widthOfMarsY){
+                positionY = 2;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'E') {
             positionY += 1;
+            if (positionY > mars.widthOfMarsY){
+                positionY = 0;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'W') {
             positionY += 1;
+            if (positionY > mars.widthOfMarsY){
+                positionY = 0;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'W') {
             positionY -= 1;
+            if (positionY < mars.widthOfMarsY){
+                positionY = 2;
+                roverPosition += positionX + ",";
+                roverPosition += positionY;
+            } else
             roverPosition += positionX + ",";
             roverPosition += positionY;
             return roverPosition;
@@ -102,8 +142,8 @@ Mars mars = new Mars();
 
         for (Character command : arrOfcommands) {
             changeFacingDirectionOfRover(command);
-            if (mars.thereIsAnObstacleAtPosition(positionX, positionY) == true) {
-                System.out.println("Stopped at " + roverPosition + "." + " Cannot move. Obstacle " +
+            if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
+                System.out.println("Cannot move. Obstacle " +
                         "ahead.");
             } else {
                 moveRoverBackOrForward(command);

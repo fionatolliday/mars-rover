@@ -4,8 +4,13 @@ import java.util.List;
 
 public class Mars {
 
+
     private List<List<String>> mars;
-    
+    int heightOfMarsX = 2;
+    int widthOfMarsY = 2;
+
+
+
 
     public Mars() {
         this.mars = new ArrayList<>();
