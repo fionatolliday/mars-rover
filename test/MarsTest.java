@@ -1,30 +1,23 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class MarsTest {
 
+    Mars mars = new Mars();
 
-    @Test
-    public void printsOutEmptyMarsGrid() {
-        Mars mars = new Mars();
-
-        String expectedMarsGrid = "   \n" +
-                "   \n" +
-                "   ";
-
-        String actualMarsGrid = mars.printMars();
-
-        assertEquals(expectedMarsGrid, actualMarsGrid);
-    }
 
     @Test
     public void marsHasAnObstacleAtLocation() {
-        Mars mars = new Mars();
-
         Assert.assertTrue(mars.thereIsAnObstacleAtPosition(0, 2));
+    }
+
+    @Test
+    public void marsGridWrapsAtEdge() {
+        int expectedPosition = 2;
+        int actual = mars.wrapMars(-2);
+
+        Assert.assertEquals(expectedPosition, actual);
     }
 }
 

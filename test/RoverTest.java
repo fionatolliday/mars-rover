@@ -33,7 +33,7 @@ public class RoverTest {
 
     @Test
     public void roverCanTurnRight() {
-        String expectedFacingDirection = "E";
+        char expectedFacingDirection = 'E';
         Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R'));
     }
 
