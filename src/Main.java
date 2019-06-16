@@ -10,9 +10,7 @@ public class Main {
         System.out.println("Rover has landed on Mars at position " + rover.roversStartingPosition() + ". \n");
         commands.gainUserCommandAsString();
         commands.arrayOfCommands(commands.commandInputString);
-
         rover.userCommandsToMoveRover(commands.arrOfcommands);
-
 
     }
 
