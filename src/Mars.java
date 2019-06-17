@@ -37,19 +37,10 @@ public class Mars {
         return String.join("\n", marsRows);
     }
 
-    public int checkForEdge(int position) {
-        if (position == maxheightAndWidthOfMars) {
-            return minHeightAndWidthOfMars;
-        } else if (position == minHeightAndWidthOfMars) {
-            return maxheightAndWidthOfMars;
-        }
-        return position;
-    }
 
 
     public boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
         return mars.get(positionX).get(positionY) == "X";
-
     }
 
 
