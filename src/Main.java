@@ -11,7 +11,6 @@ public class Main {
         commands.gainUserCommandAsString();
         commands.arrayOfCommands(commands.commandInputString);
         rover.userCommandsToMoveRover(commands.arrOfCommands);
-
     }
 
 
