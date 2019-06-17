@@ -97,9 +97,7 @@ public class Rover {
         return roverPosition;
 
     }
-
-    Mars mars = new Mars();
-
+    
     public void userCommandsToMoveRover(List<Character> arrOfcommands) {
 
         for (Character command : arrOfcommands) {

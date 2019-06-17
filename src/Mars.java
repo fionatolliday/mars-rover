@@ -5,6 +5,15 @@ import java.util.List;
 public class Mars {
 
     private List<List<String>> mars;
+
+    public int getMaxheightAndWidthOfMars() {
+        return maxheightAndWidthOfMars;
+    }
+
+    public int getMinHeightAndWidthOfMars() {
+        return minHeightAndWidthOfMars;
+    }
+
     private int maxheightAndWidthOfMars = 2;
     private int minHeightAndWidthOfMars = 0;
 
