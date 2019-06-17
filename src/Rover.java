@@ -140,8 +140,6 @@ public class Rover {
 
     public void userCommandsToMoveRover(List<Character> arrOfCommands) {
         String roversJourney = "";
-
-
         for (Character command : arrOfCommands) {
             changeFacingDirectionOfRover(command);
 

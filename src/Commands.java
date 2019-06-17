@@ -14,7 +14,8 @@ public class Commands {
                 "\n" +
                 "As " +
                 "an example, It should look something like this: FFLBLRBF");
-        commandInputString = getInput.nextLine();
+        commandInputString = getInput.nextLine().toUpperCase();
+
     }
 
 
