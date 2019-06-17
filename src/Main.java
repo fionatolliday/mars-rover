@@ -13,5 +13,4 @@ public class Main {
         rover.userCommandsToMoveRover(commands.arrOfCommands);
     }
 
-
 }

@@ -159,29 +159,4 @@ public class Rover {
             System.out.println("Rover travelled through coordinates " + roversJourney + ".");
         }
 
-
-//    public void userCommandsToMoveRover(List<Character> arrOfCommands) {
-//        String roversJourney = "";
-//        for (Character command : arrOfCommands) {
-//            changeFacingDirectionOfRover(command);
-//
-//            if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
-//                System.out.println("Cannot move. Obstacle " +
-//                        "ahead at position " + roverPosition);
-//            } else {
-//                moveRoverBackward(command);
-//            }
-//            moveRoverForward(command);
-//
-//            roversJourney += positionX + ",";
-//            roversJourney += positionY + ",";
-//            roversJourney += facingDirection + " ";
-//        }
-//
-//        System.out.println("Rover travelled through coordinates " + roversJourney + "\n" +
-//                "before" +
-//                " " +
-//                "hitting an obstacle at the final point");
-//    }
-
     }
