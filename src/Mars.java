@@ -28,14 +28,6 @@ public class Mars {
         this.mars.add(row3);
     }
 
-    public String printMars() {
-        List<String> marsRows = new ArrayList<>();
-
-        for (List<String> rows : mars) {
-            marsRows.add(String.join("", rows));
-        }
-        return String.join("\n", marsRows);
-    }
 
 
     public boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {

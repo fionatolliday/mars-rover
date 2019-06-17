@@ -15,6 +15,8 @@ public class Commands {
                 "As " +
                 "an example, It should look something like this: FFLBLRBF");
         commandInputString = getInput.nextLine().toUpperCase();
+
+
     }
 
 
@@ -22,10 +24,13 @@ public class Commands {
     List<Character> arrOfCommands = new ArrayList<>();
 
     public List<Character> arrayOfCommands(String commandInputString) {
+        if(!commandInputString.matches("[FBRL]+")) {
+            System.out.println("Invalid commands. Please try again");
 
-        for (int i = 0; i < commandInputString.length(); i++) {
-            arrOfCommands.add(commandInputString.charAt(i));
+            for (int i = 0; i < commandInputString.length(); i++) {
+                arrOfCommands.add(commandInputString.charAt(i));
             }
+        }
         return arrOfCommands;
     }
 
