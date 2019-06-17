@@ -150,22 +150,14 @@ public class Rover {
             roversJourney += positionX + ",";
             roversJourney += positionY + ",";
             roversJourney += facingDirection + "  ";
+
+            if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
+            System.out.println("Can no longer move. Obstacle " +
+                    "detected at position " + positionX + "," + positionY + ".");
+            }
         }
-            System.out.println("Rover travelled through coordinates " + roversJourney + "\n" +
-                    "before" +
-                    " " +
-                    "hitting an obstacle at the final point");
-
-        for (Character command : arrOfCommands) {
-
-            if (mars.thereIsAnObstacleAtPosition(positionX, positionY));
-
+            System.out.println("Rover travelled through coordinates " + roversJourney + ".");
         }
-                System.out.println("Cannot move. Obstacle " +
-                        "ahead at position " + roverPosition);
-
-    }
-
 
 
 //    public void userCommandsToMoveRover(List<Character> arrOfCommands) {
@@ -192,4 +184,4 @@ public class Rover {
 //                "hitting an obstacle at the final point");
 //    }
 
-}
+    }
