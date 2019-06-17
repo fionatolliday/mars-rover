@@ -18,15 +18,17 @@ public class Commands {
     }
 
 
-    List<Character> arrOfcommands = new ArrayList<>();
+    List<Character> arrOfCommands = new ArrayList<>();
 
     public List<Character> arrayOfCommands(String commandInputString) {
 
         for (int i = 0; i < commandInputString.length(); i++) {
-            arrOfcommands.add(commandInputString.charAt(i));
+            arrOfCommands.add(commandInputString.charAt(i));
         }
-        return arrOfcommands;
+        return arrOfCommands;
     }
+
+
 
 }
 

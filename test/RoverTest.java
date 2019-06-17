@@ -20,27 +20,27 @@ public class RoverTest {
 
 
     @Test
-    public void roverCanMoveForward() {
+    public void moveRoverForward() {
         String expectedForwardPosition = "0,1";
-        Assert.assertEquals(expectedForwardPosition, rover.moveRoverBackOrForward('F'));
+        Assert.assertEquals(expectedForwardPosition, rover.moveRoverForward('F'));
     }
 
     @Test
-    public void roverCanMoveBackwards() {
+    public void moveRoverBackward() {
         String expectedBackPosition = "2,1";
-        Assert.assertEquals(expectedBackPosition, rover.moveRoverBackOrForward('B'));
+        Assert.assertEquals(expectedBackPosition, rover.moveRoverBackward('B'));
     }
 
     @Test
     public void roverCanTurnLeft() {
         char expectedFacingDirection = 'W';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L', FacingDir.N));
+        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L'));
     }
 
     @Test
     public void roverCanTurnRight() {
         char expectedFacingDirection = 'E';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R', FacingDir.N));
+        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R'));
     }
 
     @Test

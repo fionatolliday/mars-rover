@@ -1,12 +1,18 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class CommandsTest {
+    Commands commands;
 
-    Commands commands = new Commands();
+    @Before
+    public void setUp() throws Exception {
+        commands = new Commands();
+    }
+
 
     @Test
     public void takesUserInputAndPutsIntoArrayOfCharacters() {

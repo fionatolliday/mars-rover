@@ -24,48 +24,46 @@ public class Rover {
         return startingPosition;
     }
 
-    public char changeFacingDirectionOfRover(char command, FacingDir facingDir) {
-        if (command == 'L') {
-            switch (facingDir) {
-                case N:
-                    facingDirection = 'W';
-                    break;
 
-                case E:
-                    facingDirection = 'N';
-                    break;
+    public char changeFacingDirectionOfRover(char command) {
+        if (command == 'L') switch (facingDirection) {
+            case 'N':
+                facingDirection = 'W';
+                break;
 
-                case S:
-                    facingDirection = 'E';
-                    break;
+            case 'E':
+                facingDirection = 'N';
+                break;
 
-                case W:
-                    facingDirection = 'S';
-                    break;
-            }
-        } else if (command == 'R') {
+            case 'S':
+                facingDirection = 'E';
+                break;
 
-            switch (facingDir) {
-                case N:
-                    facingDirection = 'E';
-                    break;
+            case 'W':
+                facingDirection = 'S';
+                break;
+        }
+        else if (command == 'R') switch (facingDirection) {
+            case 'N':
+                facingDirection = 'E';
+                break;
 
-                case E:
-                    facingDirection = 'S';
-                    break;
+            case 'E':
+                facingDirection = 'S';
+                break;
 
-                case S:
-                    facingDirection = 'W';
-                    break;
+            case 'S':
+                facingDirection = 'W';
+                break;
 
-                case W:
-                    facingDirection = 'N';
-                    break;
-            }
+            case 'W':
+                facingDirection = 'N';
+                break;
         }
 
-          return facingDirection;
+        return facingDirection;
     }
+
 
     public String moveRoverBackOrForward(char command) {
 
@@ -114,18 +112,83 @@ public class Rover {
 
     }
 
+    public String moveRoverBackward(char command) {
+
+        if (command == 'B') {
+            switch (facingDirection) {
+                case 'N':
+                    positionX += 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'S':
+                    positionX -= 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'E':
+                    positionY -= 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'W':
+                    positionY += 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+            }
+        }
+        return roverPosition;
+    }
+
+    public String moveRoverForward(char command) {
+
+        if (command == 'F') {
+            switch (facingDirection) {
+                case 'N':
+                    positionX -= 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'S':
+                    positionX += 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'E':
+                    positionY += 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+
+                case 'W':
+                    positionY -= 1;
+                    roverPosition += checkForEdge(positionX) + ",";
+                    roverPosition += checkForEdge(positionY);
+                    break;
+            }
+        }
+        return roverPosition;
+
+    }
+
     public int checkForEdge(int position) {
-        if (position > mars.getMaxheightAndWidthOfMars()) {
+        if (position > mars.getMaxHeightAndWidthOfMars()) {
             return mars.getMinHeightAndWidthOfMars();
         } else if (position < mars.getMinHeightAndWidthOfMars()) {
-            return mars.getMaxheightAndWidthOfMars();
+            return mars.getMaxHeightAndWidthOfMars();
         }
         return position;
     }
 
-    public void userCommandsToMoveRover(List<Character> arrOfcommands) {
+    public void userCommandsToMoveRover(List<Character> arrOfCommands) {
 
-        for (Character command : arrOfcommands) {
+        for (Character command : arrOfCommands) {
             changeFacingDirectionOfRover(command);
             if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
                 System.out.println("Cannot move. Obstacle " +
