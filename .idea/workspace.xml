@@ -35,10 +35,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mars.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-458">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="176">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#180#181#0" expanded="true" />
                 <element signature="e#226#227#0" expanded="true" />
                 <element signature="e#273#274#0" expanded="true" />
                 <element signature="e#319#320#0" expanded="true" />
@@ -50,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MarsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="220">
+              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,20 +60,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Rover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="103" column="29" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+            <state relative-caret-position="161">
+              <caret line="26" column="44" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FacingDir.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="324">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CommandEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -92,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Commands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="530">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -120,6 +130,7 @@
       <list>
         <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -138,8 +149,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/MarsTest.java" />
         <option value="$PROJECT_DIR$/src/Mars.java" />
-        <option value="$PROJECT_DIR$/test/RoverTest.java" />
+        <option value="$PROJECT_DIR$/src/FacingDir.java" />
         <option value="$PROJECT_DIR$/src/Rover.java" />
+        <option value="$PROJECT_DIR$/test/RoverTest.java" />
       </list>
     </option>
   </component>
@@ -183,7 +195,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560731735830" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560733750865" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -211,31 +223,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in MarsRover">
+  <component name="RunManager" selected="JUnit.RoverTest.roverCanTurnLeft">
     <configuration name="All in MarsRover" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MarsTest.marsGridWrapsAtEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarsRover" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MarsTest" />
-      <option name="METHOD_NAME" value="marsGridWrapsAtEdge" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoverTest.roverCanMoveBackwards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarsRover" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RoverTest" />
-      <option name="METHOD_NAME" value="roverCanMoveBackwards" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,6 +237,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoverTest" />
       <option name="METHOD_NAME" value="roverCanMoveForward" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoverTest.roverCanTurnLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarsRover" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverTest" />
+      <option name="METHOD_NAME" value="roverCanTurnLeft" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoverTest.roverCanTurnRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarsRover" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverTest" />
+      <option name="METHOD_NAME" value="roverCanTurnRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,11 +274,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoverTest.roverCanTurnLeft" />
+        <item itemvalue="JUnit.RoverTest.roverCanTurnRight" />
         <item itemvalue="JUnit.All in MarsRover" />
         <item itemvalue="JUnit.RoverTest.roverCanMoveForward" />
         <item itemvalue="JUnit.RoverTest.roverIsOnMarsAt00FacingNorth" />
-        <item itemvalue="JUnit.RoverTest.roverCanMoveBackwards" />
-        <item itemvalue="JUnit.MarsTest.marsGridWrapsAtEdge" />
       </list>
     </recent_temporary>
   </component>
@@ -284,24 +296,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_MarsRover - 2019.06.17 at 10h 05m 48s.xml">
-      <configuration name="All in MarsRover" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_MarsRover - 2019.06.17 at 10h 18m 24s.xml">
-      <configuration name="All in MarsRover" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarsTest_marsGridWrapsAtEdge - 2019.06.17 at 10h 19m 48s.xml">
-      <configuration name="MarsTest.marsGridWrapsAtEdge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_MarsRover - 2019.06.17 at 10h 24m 23s.xml">
-      <configuration name="All in MarsRover" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoverTest_roverCanMoveForward - 2019.06.17 at 10h 25m 51s.xml">
-      <configuration name="RoverTest.roverCanMoveForward" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoverTest_roverCanMoveBackwards - 2019.06.17 at 10h 26m 32s.xml">
-      <configuration name="RoverTest.roverCanMoveBackwards" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RoverTest_roverIsOnMarsAt00FacingNorth - 2019.06.17 at 10h 27m 05s.xml">
       <configuration name="RoverTest.roverIsOnMarsAt00FacingNorth" configurationId="JUnit" />
     </history-entry>
@@ -313,6 +307,24 @@
     </history-entry>
     <history-entry file="RoverTest_roverCanMoveForward - 2019.06.17 at 10h 33m 57s.xml">
       <configuration name="RoverTest.roverCanMoveForward" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_MarsRover - 2019.06.17 at 10h 35m 38s.xml">
+      <configuration name="All in MarsRover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RoverTest_roverCanTurnLeft - 2019.06.17 at 11h 06m 07s.xml">
+      <configuration name="RoverTest.roverCanTurnLeft" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RoverTest_roverCanTurnRight - 2019.06.17 at 11h 06m 40s.xml">
+      <configuration name="RoverTest.roverCanTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RoverTest_roverCanTurnLeft - 2019.06.17 at 11h 06m 48s.xml">
+      <configuration name="RoverTest.roverCanTurnLeft" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RoverTest_roverCanTurnLeft - 2019.06.17 at 11h 07m 05s.xml">
+      <configuration name="RoverTest.roverCanTurnLeft" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RoverTest_roverCanTurnLeft - 2019.06.17 at 11h 08m 28s.xml">
+      <configuration name="RoverTest.roverCanTurnLeft" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -332,8 +344,8 @@
       <window_info anchor="bottom" id="Messages" weight="0.32982457" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25614035" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.425731" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2725146" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23976608" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -372,18 +384,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="530">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommandEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -396,18 +401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/MarsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="220">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -416,10 +411,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Mars.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-458">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="176">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
             <element signature="e#226#227#0" expanded="true" />
             <element signature="e#273#274#0" expanded="true" />
             <element signature="e#319#320#0" expanded="true" />
@@ -427,10 +423,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FacingDir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Rover.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="103" column="29" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+        <state relative-caret-position="161">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

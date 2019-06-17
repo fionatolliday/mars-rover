@@ -4,7 +4,13 @@ import org.junit.Test;
 
 public class RoverTest {
 
-    Rover rover = new Rover();
+    Rover rover;
+
+    @Before
+    public void setUp() throws Exception {
+        rover = new Rover();
+    }
+
 
     @Test
     public void roverIsOnMarsAt00FacingNorth() {
@@ -28,13 +34,13 @@ public class RoverTest {
     @Test
     public void roverCanTurnLeft() {
         char expectedFacingDirection = 'W';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L'));
+        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L', FacingDir.N));
     }
 
     @Test
     public void roverCanTurnRight() {
         char expectedFacingDirection = 'E';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R'));
+        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R', FacingDir.N));
     }
 
     @Test

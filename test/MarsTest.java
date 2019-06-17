@@ -1,10 +1,16 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class MarsTest {
 
-    Mars mars = new Mars();
+    Mars mars;
+
+    @Before
+    public void setUp() throws Exception {
+        mars = new Mars();
+    }
 
 
     @Test

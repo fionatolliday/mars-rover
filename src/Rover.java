@@ -24,32 +24,48 @@ public class Rover {
         return startingPosition;
     }
 
-
-    public char changeFacingDirectionOfRover(char command) {
+    public char changeFacingDirectionOfRover(char command, FacingDir facingDir) {
         if (command == 'L') {
-            if (facingDirection == 'N') {
-                facingDirection = 'W';
-            } else if (facingDirection == 'E') {
-                facingDirection = 'N';
-            } else if (facingDirection == 'S') {
-                facingDirection = 'E';
-            } else if (facingDirection == 'W') {
-                facingDirection = 'S';
+            switch (facingDir) {
+                case N:
+                    facingDirection = 'W';
+                    break;
+
+                case E:
+                    facingDirection = 'N';
+                    break;
+
+                case S:
+                    facingDirection = 'E';
+                    break;
+
+                case W:
+                    facingDirection = 'S';
+                    break;
             }
         } else if (command == 'R') {
-            if (facingDirection == 'N') {
-                facingDirection = 'E';
-            } else if (facingDirection == 'E') {
-                facingDirection = 'S';
-            } else if (facingDirection == 'S') {
-                facingDirection = 'W';
-            } else if (facingDirection == 'W') {
-                facingDirection = 'N';
+
+            switch (facingDir) {
+                case N:
+                    facingDirection = 'E';
+                    break;
+
+                case E:
+                    facingDirection = 'S';
+                    break;
+
+                case S:
+                    facingDirection = 'W';
+                    break;
+
+                case W:
+                    facingDirection = 'N';
+                    break;
             }
         }
-        return facingDirection;
-    }
 
+          return facingDirection;
+    }
 
     public String moveRoverBackOrForward(char command) {
 
