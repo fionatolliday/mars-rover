@@ -15,7 +15,7 @@ public class MarsTest {
     @Test
     public void marsGridWrapsAtEdge() {
         int expectedPosition = 2;
-        int actual = mars.wrapMars(-2);
+        int actual = mars.checkForEdge(-2);
 
         Assert.assertEquals(expectedPosition, actual);
     }

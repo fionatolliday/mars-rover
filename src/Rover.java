@@ -8,8 +8,8 @@ public class Rover {
     private String roverPosition;
 
     public Rover() {
-        this.positionX = 1;
-        this.positionY = 1;
+        this.positionX = 0;
+        this.positionY = 0;
         this.facingDirection = 'N';
         this.roverPosition = "";
     }
@@ -53,58 +53,43 @@ public class Rover {
 
         if (command == 'B' && facingDirection == 'N') {
             positionX += 1;
-            positionX = mars.wrapMars(positionX);
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'N') {
             positionX -= 1;
-            positionX = mars.wrapMars(positionX);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'S') {
             positionX -= 1;
-            positionX = mars.wrapMars(positionX);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'S') {
             positionX += 1;
-            positionX = mars.wrapMars(positionX);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'E') {
             positionY -= 1;
-            positionY = mars.wrapMars(positionY);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'E') {
             positionY += 1;
-            positionY = mars.wrapMars(positionY);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'B' && facingDirection == 'W') {
             positionY += 1;
-            positionY = mars.wrapMars(positionY);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         } else if (command == 'F' && facingDirection == 'W') {
             positionY -= 1;
-            positionY = mars.wrapMars(positionY);
-
-            roverPosition += positionX + ",";
-            roverPosition += positionY;
+            roverPosition += mars.checkForEdge(positionX) + ",";
+            roverPosition += mars.checkForEdge(positionY);
             return roverPosition;
         }
         return roverPosition;

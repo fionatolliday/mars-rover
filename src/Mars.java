@@ -6,7 +6,7 @@ public class Mars {
 
     private List<List<String>> mars;
     private int maxheightAndWidthOfMars = 2;
-    private int minHeightAndWidthOfMars = 0;
+    private int minHeightAndWidthOfMars = -2;
 
     public Mars() {
         this.mars = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Mars {
         return String.join("\n", marsRows);
     }
 
-    public int wrapMars(int position) {
+    public int checkForEdge(int position) {
         if (position >= maxheightAndWidthOfMars) {
             return minHeightAndWidthOfMars;
         } else if (position <= minHeightAndWidthOfMars) {
@@ -39,10 +39,7 @@ public class Mars {
 
 
     public boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
-        if (mars.get(positionX).get(positionY) == "X") {
-            return true;
-        }
-        return false;
+        return mars.get(positionX).get(positionY) == "X";
 
     }
 
