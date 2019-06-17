@@ -39,7 +39,7 @@ public class Mars {
 
 
     public boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
-        return mars.get(positionX).get(positionY) == "X";
+        return mars.get(positionX).get(positionY).equals("X");
     }
 
 

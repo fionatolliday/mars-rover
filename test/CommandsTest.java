@@ -14,12 +14,12 @@ public class CommandsTest {
     }
 
 
-    @Test
-    public void takesUserInputAndPutsIntoArrayOfCharacters() {
-        List<Character> expectedArrayOfCommands = Arrays.asList('F', 'B', 'L', 'R');
-        List<Character> actual = commands.arrayOfCommands("FBLR");
-
-        Assert.assertEquals(expectedArrayOfCommands, actual);
-    }
+//    @Test
+//    public void takesUserInputAndPutsIntoArrayOfCharacters() {
+//        List<Character> expectedArrayOfCommands = Arrays.asList('F', 'B', 'L', 'R');
+//        List<Character> actual = commands.arrayOfCommands("FBLR");
+//
+//        Assert.assertEquals(expectedArrayOfCommands, actual);
+//    }
 
 }

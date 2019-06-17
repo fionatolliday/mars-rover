@@ -10,13 +10,13 @@ public class Commands {
 
     public void gainUserCommandAsString() {
         System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
-                "backwards (B).  \n Using capital letters, please enter your commands.  " +
+                "backwards (B).  \n Please enter your commands.  " +
                 "\n" +
                 "As " +
                 "an example, It should look something like this: FFLBLRBF");
         commandInputString = getInput.nextLine().toUpperCase();
-
     }
+
 
 
     List<Character> arrOfCommands = new ArrayList<>();
@@ -25,7 +25,7 @@ public class Commands {
 
         for (int i = 0; i < commandInputString.length(); i++) {
             arrOfCommands.add(commandInputString.charAt(i));
-        }
+            }
         return arrOfCommands;
     }
 
