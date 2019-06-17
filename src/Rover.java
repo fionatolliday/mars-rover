@@ -6,12 +6,14 @@ public class Rover {
     private int positionY;
     private char facingDirection;
     private String roverPosition;
+    private Mars mars;
 
     public Rover() {
         this.positionX = 1;
         this.positionY = 1;
         this.facingDirection = 'N';
         this.roverPosition = "";
+        this.mars = new Mars();
     }
 
     public String roversStartingPosition() {
