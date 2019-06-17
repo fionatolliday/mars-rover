@@ -8,8 +8,8 @@ public class Rover {
     private String roverPosition;
 
     public Rover() {
-        this.positionX = 0;
-        this.positionY = 0;
+        this.positionX = 1;
+        this.positionY = 1;
         this.facingDirection = 'N';
         this.roverPosition = "";
     }
@@ -104,7 +104,7 @@ public class Rover {
             changeFacingDirectionOfRover(command);
             if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
                 System.out.println("Cannot move. Obstacle " +
-                        "ahead.");
+                        "ahead at position " + roverPosition);
             } else {
                 moveRoverBackOrForward(command);
             }

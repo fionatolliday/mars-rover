@@ -6,7 +6,7 @@ public class Mars {
 
     private List<List<String>> mars;
     private int maxheightAndWidthOfMars = 2;
-    private int minHeightAndWidthOfMars = -2;
+    private int minHeightAndWidthOfMars = 0;
 
     public Mars() {
         this.mars = new ArrayList<>();
@@ -29,9 +29,9 @@ public class Mars {
     }
 
     public int checkForEdge(int position) {
-        if (position >= maxheightAndWidthOfMars) {
+        if (position == maxheightAndWidthOfMars) {
             return minHeightAndWidthOfMars;
-        } else if (position <= minHeightAndWidthOfMars) {
+        } else if (position == minHeightAndWidthOfMars) {
             return maxheightAndWidthOfMars;
         }
         return position;
