@@ -65,53 +65,6 @@ public class Rover {
     }
 
 
-    public String moveRoverBackOrForward(char command) {
-
-        if (command == 'B' && facingDirection == 'N') {
-            positionX += 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'F' && facingDirection == 'N') {
-            positionX -= 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'B' && facingDirection == 'S') {
-            positionX -= 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'F' && facingDirection == 'S') {
-            positionX += 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'B' && facingDirection == 'E') {
-            positionY -= 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'F' && facingDirection == 'E') {
-            positionY += 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'B' && facingDirection == 'W') {
-            positionY += 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        } else if (command == 'F' && facingDirection == 'W') {
-            positionY -= 1;
-            roverPosition += checkForEdge(positionX) + ",";
-            roverPosition += checkForEdge(positionY);
-            return roverPosition;
-        }
-        return roverPosition;
-
-    }
-
     public String moveRoverBackward(char command) {
 
         if (command == 'B') {
@@ -174,7 +127,6 @@ public class Rover {
             }
         }
         return roverPosition;
-
     }
 
     public int checkForEdge(int position) {
@@ -194,9 +146,9 @@ public class Rover {
                 System.out.println("Cannot move. Obstacle " +
                         "ahead at position " + roverPosition);
             } else {
-                moveRoverBackOrForward(command);
+                moveRoverBackward(command);
             }
-
+            moveRoverForward(command);
         }
 
     }
