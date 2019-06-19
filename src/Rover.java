@@ -154,6 +154,7 @@ public class Rover {
             if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
             System.out.println("Can no longer move. Obstacle " +
                     "detected at position " + positionX + "," + positionY + ".");
+            break;
             }
         }
             System.out.println("Rover travelled through coordinates " + roversJourney + ".");
