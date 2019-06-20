@@ -22,10 +22,9 @@ public class Commands {
                     "an example, it should look something like this: FFLBLRBF");
 
             commandInputString = getInput.nextLine().toUpperCase();
-
     }
 
-    public List<Character> arrayOfCommands(String commandInputString) {
+    public List<Character> convertToArrayOfCommands(String commandInputString) {
 
         for (int i = 0; i < commandInputString.length(); i++) {
             arrOfCommands.add(commandInputString.charAt(i));
