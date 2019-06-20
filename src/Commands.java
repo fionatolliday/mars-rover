@@ -15,28 +15,27 @@ public class Commands {
     }
 
     public void gainUserCommandAsString() {
-        System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
-                "backwards (B).  \n Please enter your commands.  " +
-                "\n" +
-                "As " +
-                "an example, it should look something like this: FFLBLRBF");
-        commandInputString = getInput.nextLine().toUpperCase();
+            System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
+                    "backwards (B).  \n Please enter your commands.  " +
+                    "\n" +
+                    "As " +
+                    "an example, it should look something like this: FFLBLRBF");
+
+            commandInputString = getInput.nextLine().toUpperCase();
 
     }
 
-
     public List<Character> arrayOfCommands(String commandInputString) {
-        if (!commandInputString.matches("[F&&B&&R&&L]+")) {
-            System.out.println("Invalid commands. Please try again");
-            gainUserCommandAsString();
 
-            for (int i = 0; i < commandInputString.length(); i++) {
-                arrOfCommands.add(commandInputString.charAt(i));
-            }
+        for (int i = 0; i < commandInputString.length(); i++) {
+            arrOfCommands.add(commandInputString.charAt(i));
         }
         return arrOfCommands;
     }
 
 
 }
+
+
+
 

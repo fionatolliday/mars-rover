@@ -13,11 +13,20 @@ public class CommandsTest {
         commands = new Commands();
     }
 
-
 //    @Test
+//    public void checkForInvalidCommand() {
+//
+//        boolean actual = commands.checkForInvalidCommands("FBHY");
+//
+////        Assert.assertTrue(actual);
+//        Assert.assertFalse(commands.checkForInvalidCommands("FBRL"));
+//
+//    }
+
+    //    @Test
 //    public void takesUserInputAndPutsIntoArrayOfCharacters() {
 //        List<Character> expectedArrayOfCommands = Arrays.asList('F', 'B', 'L', 'R');
-//        List<Character> actual = commands.arrayOfCommands("FBLR");
+//        List<Character> actual = commands.convertToArrayOfCommands("FBLR");
 //
 //        Assert.assertEquals(expectedArrayOfCommands, actual);
 //    }
