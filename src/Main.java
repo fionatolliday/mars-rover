@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
 
 
@@ -8,9 +11,13 @@ public class Main {
 
 
         System.out.println("Rover has landed on Mars at position " + rover.roversStartingPosition() + ". \n");
-        commands.gainUserCommandAsString();
-        commands.convertToArrayOfCommands(commands.commandInputString);
-        rover.userCommandsToMoveRover(commands.arrOfCommands);
+
+        String userInput = commands.gainUserCommandAsString(commands.getInput);
+        List<Character> arrOfCommands = commands.splitUserInputString(userInput);
+
+        rover.userCommandsToMoveRover(arrOfCommands);
+
+
     }
 
 }
