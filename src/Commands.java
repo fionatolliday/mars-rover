@@ -7,11 +7,11 @@ public class Commands {
 
     Scanner getInput;
 
-    public Commands() {
+    Commands() {
         this.getInput = new Scanner(System.in);
     }
 
-    public String gainUserCommandAsString(Scanner getInput) {
+    String gainUserCommandAsString(Scanner getInput) {
         String commandInputString = "";
 
         do {
@@ -29,7 +29,7 @@ public class Commands {
     }
 
 
-    public List<Character> splitUserInputString(String userInput) {
+    List<Character> splitUserInputString(String userInput) {
         List<Character> arrOfCommands = new ArrayList<>();
 
         char[] userInputChars = userInput.toCharArray();
@@ -41,14 +41,14 @@ public class Commands {
     }
 
 
-    public boolean validateCommands(List<Character> commands) {
-        for (int i = 0; i < commands.size(); i++) {
-            char characterCommand = commands.get(i);
+    boolean validateCommands(List<Character> commands) {
+        for (char characterCommand : commands) {
             char characterCommandUpperCase = Character.toUpperCase(characterCommand);
             if (characterCommandUpperCase != 'F' && characterCommandUpperCase != 'B' && characterCommandUpperCase != 'L' && characterCommandUpperCase != 'R') {
-        return true;
+                return true;
             }
-        } return false;
+        }
+        return false;
     }
 
 }

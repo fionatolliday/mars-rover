@@ -1,5 +1,5 @@
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Main {
 
@@ -16,8 +16,6 @@ public class Main {
         List<Character> arrOfCommands = commands.splitUserInputString(userInput);
 
         rover.userCommandsToMoveRover(arrOfCommands);
-
-
     }
 
 }

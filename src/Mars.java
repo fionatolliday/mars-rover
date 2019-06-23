@@ -6,18 +6,18 @@ public class Mars {
 
     private List<List<String>> mars;
 
-    public int getMaxHeightAndWidthOfMars() {
+    int getMaxHeightAndWidthOfMars() {
         return maxHeightAndWidthOfMars;
     }
 
-    public int getMinHeightAndWidthOfMars() {
+    int getMinHeightAndWidthOfMars() {
         return minHeightAndWidthOfMars;
     }
 
     private int maxHeightAndWidthOfMars = 2;
     private int minHeightAndWidthOfMars = 0;
 
-    public Mars() {
+    Mars() {
         this.mars = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", "X");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -30,7 +30,7 @@ public class Mars {
 
 
 
-    public boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
+    boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
         return mars.get(positionX).get(positionY).equals("X");
     }
 

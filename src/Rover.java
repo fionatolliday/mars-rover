@@ -8,7 +8,7 @@ public class Rover {
     private String roverPosition;
     private Mars mars;
 
-    public Rover() {
+    Rover() {
         this.positionX = 1;
         this.positionY = 1;
         this.facingDirection = 'N';
@@ -16,7 +16,7 @@ public class Rover {
         this.mars = new Mars();
     }
 
-    public String roversStartingPosition() {
+    String roversStartingPosition() {
         String startingPosition = "";
         startingPosition += positionX + ",";
         startingPosition += positionY + ",";
@@ -25,7 +25,7 @@ public class Rover {
     }
 
 
-    public char changeFacingDirectionOfRover(char command) {
+    char changeFacingDirectionOfRover(char command) {
         if (command == 'L') switch (facingDirection) {
             case 'N':
                 facingDirection = 'W';
@@ -65,7 +65,7 @@ public class Rover {
     }
 
 
-    public String moveRoverBackward(char command) {
+    String moveRoverBackward(char command) {
 
         if (command == 'B') {
             switch (facingDirection) {
@@ -97,7 +97,7 @@ public class Rover {
         return roverPosition;
     }
 
-    public String moveRoverForward(char command) {
+    String moveRoverForward(char command) {
 
         if (command == 'F') {
             switch (facingDirection) {
@@ -129,7 +129,7 @@ public class Rover {
         return roverPosition;
     }
 
-    public int checkForEdge(int position) {
+    int checkForEdge(int position) {
         if (position > mars.getMaxHeightAndWidthOfMars()) {
             return mars.getMinHeightAndWidthOfMars();
         } else if (position < mars.getMinHeightAndWidthOfMars()) {
@@ -138,19 +138,19 @@ public class Rover {
         return position;
     }
 
-    public void userCommandsToMoveRover(List<Character> commands) {
+    void userCommandsToMoveRover(List<Character> arrOfCommands) {
         String roversJourney = "";
 
-        for (Character command : commands) {
+        for (Character command : arrOfCommands) {
                 changeFacingDirectionOfRover(command);
 
                 if (!mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
                     moveRoverBackward(command);
                     moveRoverForward(command);
+                }
                 roversJourney += positionX + ",";
                 roversJourney += positionY + ",";
                 roversJourney += facingDirection + "  ";
-                }
 
                 if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
                     System.out.println("Can no longer move. Obstacle " +
