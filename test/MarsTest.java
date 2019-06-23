@@ -1,22 +1,9 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 
 public class MarsTest {
 
-    private Mars mars;
-
-    @Before
-    public void setUp() throws Exception {
-        mars = new Mars();
-
-    }
-
+    private Mars mars = new Mars();
 
     @Test
     public void marsHasAnObstacleAtLocation() {
