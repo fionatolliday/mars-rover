@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CommandsTest {
-    Commands commands;
+    private Commands commands;
 
     @Before
     public void setUp() throws Exception {

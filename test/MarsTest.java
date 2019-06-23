@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MarsTest {
 
-    Mars mars;
+    private Mars mars;
 
     @Before
     public void setUp() throws Exception {

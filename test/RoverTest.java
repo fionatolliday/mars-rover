@@ -1,16 +1,9 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class RoverTest {
 
-    Rover rover;
-
-    @Before
-    public void setUp() throws Exception {
-        rover = new Rover();
-    }
-
+    private Rover rover = new Rover();
 
     @Test
     public void roverIsOnMarsAt00FacingNorth() {
