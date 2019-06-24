@@ -8,8 +8,9 @@ presentation.
 
 ## About the code
 In construction of this code, i took a test first approach.
-After mapping out the problem on paper, i first put a set of tests in place that would assist me in
-building methods that only do one thing each.
+After mapping out the problem on paper, i first put a set of tests in place.  This provided me
+with clarity and a simple structure that would then assist me in building clean methods with a
+single purpose.
 
 This was the first time i have ever refactored my code to reduce/attempt to eliminate as much
 duplication as possible. This in turn helped me to remove any expired code that was no longer
