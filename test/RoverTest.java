@@ -20,28 +20,42 @@ public class RoverTest {
 
     @Test
     public void moveRoverBackward() {
-        String expectedBackPosition = "2,1";
-        Assert.assertEquals(expectedBackPosition, rover.moveRoverBackward('B'));
+        String expectedBackPositionFromNorth11 = "2,1";
+        Assert.assertEquals(expectedBackPositionFromNorth11, rover.moveRoverBackward('B'));
+
     }
 
     @Test
-    public void roverCanTurnLeft() {
-        char expectedFacingDirection = 'W';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L'));
+    public void roverCanTurnLeftAndChangeFacingDirection() {
+        char expectedWest = 'W';
+        Assert.assertEquals(expectedWest, rover.changeFacingDirectionOfRover('L'));
+
+        char expectedSouth = 'S';
+        Assert.assertEquals(expectedSouth, rover.changeFacingDirectionOfRover('L'));
+
+        char expectedEast = 'E';
+        Assert.assertEquals(expectedEast, rover.changeFacingDirectionOfRover('L'));
+
+        char expectedNorth = 'N';
+        Assert.assertEquals(expectedNorth, rover.changeFacingDirectionOfRover('L'));
+
     }
 
-    @Test
-    public void roverCanTurnLeftFromWestAndFaceSouth() {
-        char facingDirection = 'W';
-        char expectedFacingDirection = 'S';
-
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L'));
-    }
 
     @Test
     public void roverCanTurnRight() {
-        char expectedFacingDirection = 'E';
-        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R'));
+        char expectedEast = 'E';
+        Assert.assertEquals(expectedEast, rover.changeFacingDirectionOfRover('R'));
+
+        char expectedSouth = 'S';
+        Assert.assertEquals(expectedSouth, rover.changeFacingDirectionOfRover('R'));
+
+        char expectedWest = 'W';
+        Assert.assertEquals(expectedWest, rover.changeFacingDirectionOfRover('R'));
+
+        char expectedNorth = 'N';
+        Assert.assertEquals(expectedNorth, rover.changeFacingDirectionOfRover('R'));
+
     }
 
     @Test

@@ -11,7 +11,7 @@ class Commands {
     }
 
     String gainUserCommandAsString(Scanner getInput) {
-        String commandInputString = "";
+        String commandInputString;
 
         do {
             System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
