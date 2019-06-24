@@ -7,15 +7,12 @@ public class Mars {
     private List<List<String>> mars;
 
     int getMaxHeightAndWidthOfMars() {
-        return maxHeightAndWidthOfMars;
+        return 2;
     }
 
     int getMinHeightAndWidthOfMars() {
-        return minHeightAndWidthOfMars;
+        return 0;
     }
-
-    private int maxHeightAndWidthOfMars = 2;
-    private int minHeightAndWidthOfMars = 0;
 
     Mars() {
         this.mars = new ArrayList<>();
@@ -27,8 +24,6 @@ public class Mars {
         this.mars.add(row2);
         this.mars.add(row3);
     }
-
-
 
     boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
         return mars.get(positionX).get(positionY).equals("X");

@@ -31,6 +31,14 @@ public class RoverTest {
     }
 
     @Test
+    public void roverCanTurnLeftFromWestAndFaceSouth() {
+        char facingDirection = 'W';
+        char expectedFacingDirection = 'S';
+
+        Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('L'));
+    }
+
+    @Test
     public void roverCanTurnRight() {
         char expectedFacingDirection = 'E';
         Assert.assertEquals(expectedFacingDirection, rover.changeFacingDirectionOfRover('R'));
