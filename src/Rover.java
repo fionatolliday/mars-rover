@@ -2,18 +2,18 @@ import java.util.List;
 
 public class Rover {
 
+    Mars mars = new Mars();
+
     private int positionX;
     private int positionY;
     private char facingDirection;
     private String roverPosition;
-    private Mars mars;
 
     Rover() {
         this.positionX = 1;
         this.positionY = 1;
         this.facingDirection = 'N';
         this.roverPosition = "";
-        this.mars = new Mars();
     }
 
     String roversStartingPosition() {
@@ -65,62 +65,68 @@ public class Rover {
     }
 
 
-    String moveRoverBackward(char command) {
+    void moveRoverBackward(char command) {
         int newPosition;
 
         if (command == 'B') {
             switch (facingDirection) {
                 case 'N':
-                    newPosition = positionX += 1;
+                    positionX += 1;
+                    newPosition = positionX;
                     positionX = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'S':
-                    newPosition = positionX -= 1;
+                    positionX -= 1;
+                    newPosition = positionX;
                     positionX = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'E':
-                    newPosition = positionY -= 1;
+                    positionY -= 1;
+                    newPosition = positionY;
                     positionY = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'W':
-                    newPosition = positionY += 1;
+                    positionY += 1;
+                    newPosition = positionY;
                     positionY = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
             }
         }
-        return roverPosition;
     }
 
-    String moveRoverForward(char command) {
+    void moveRoverForward(char command) {
         int newPosition;
 
         if (command == 'F') {
             switch (facingDirection) {
                 case 'N':
-                    newPosition = positionX -= 1;
+                    positionX -= 1;
+                    newPosition = positionX;
                     positionX = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'S':
-                    newPosition = positionX += 1;
+                    positionX += 1;
+                    newPosition = positionX;
                     positionX = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'E':
-                    newPosition = positionY += 1;
+                    positionY += 1;
+                    newPosition = positionY;
                     positionY = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
 
                 case 'W':
-                    newPosition = positionY -= 1;
+                    positionY -= 1;
+                    newPosition = positionY;
                     positionY = checkForEdge(newPosition);
-                    return roverPosition;
+                    break;
             }
         }
-        return roverPosition;
     }
 
     int checkForEdge(int position) {
@@ -153,6 +159,18 @@ public class Rover {
             }
         }
         System.out.println("Rover travelled through coordinates " + roversJourney + ".");
+    }
+
+    void moveRover(List<Character> arrOfCommands) {
+        for (Character command : arrOfCommands) {
+//            change direction
+//            move rover if possible
+//              if yes, move rover + store journey
+//                if no, do not move + print end of trip message
+
+        }
+
+//
     }
 
 }

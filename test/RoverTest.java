@@ -14,18 +14,18 @@ public class RoverTest {
     }
 
 
-    @Test
-    public void moveRoverForward() {
-        String expectedForwardPosition = "0,1";
-        Assert.assertEquals(expectedForwardPosition, rover.moveRoverForward('F'));
-    }
+//    @Test
+//    public void moveRoverForward() {
+//        String expectedForwardPosition = "0,1";
+//        Assert.assertEquals(expectedForwardPosition, rover.moveRoverForward('F'));
+//    }
+//
+//    @Test
+//    public void moveRoverBackward() {
+//        String expectedBackPositionFromNorth11 = "2,1";
+//        Assert.assertEquals(expectedBackPositionFromNorth11, rover.moveRoverBackward('B'));
 
-    @Test
-    public void moveRoverBackward() {
-        String expectedBackPositionFromNorth11 = "2,1";
-        Assert.assertEquals(expectedBackPositionFromNorth11, rover.moveRoverBackward('B'));
-
-    }
+//    }
 
     @Test
     public void roverCanTurnLeftAndChangeFacingDirection() {
