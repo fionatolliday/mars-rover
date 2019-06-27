@@ -138,7 +138,7 @@ public class Rover {
         for (Character command : arrOfCommands) {
             changeFacingDirectionOfRover(command);
 
-            if (!mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
+            if (!mars.isAnObstacleFoundAtPosition(positionX, positionY)) {
                 moveRoverBackward(command);
                 moveRoverForward(command);
             }
@@ -146,7 +146,7 @@ public class Rover {
             roversJourney += positionY + ",";
             roversJourney += facingDirection + "  ";
 
-            if (mars.thereIsAnObstacleAtPosition(positionX, positionY)) {
+            if (mars.isAnObstacleFoundAtPosition(positionX, positionY)) {
                 System.out.println("Can no longer move. Obstacle " +
                         "detected at position " + positionX + "," + positionY + ".");
                 break;

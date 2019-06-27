@@ -10,7 +10,7 @@ class Commands {
     }
 
     String gainUserCommandAsString() {
-        String commandInputString;
+        String userInputString;
 
         do {
             System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
@@ -19,13 +19,12 @@ class Commands {
                     "As " +
                     "an example, it should look something like this: FFLBLRBF");
 
-            commandInputString = getInput().nextLine();
+            userInputString = getInput().nextLine();
         }
-        while(validateCommands(splitUserInputString(commandInputString)));
+        while(validateCommands(splitUserInputString(userInputString)));
 
-        return commandInputString;
+        return userInputString;
     }
-
 
     List<Character> splitUserInputString(String userInput) {
         List<Character> arrOfCommands = new ArrayList<>();
@@ -36,6 +35,10 @@ class Commands {
             arrOfCommands.add(current);
         }
         return arrOfCommands;
+    }
+
+    List<Character> getArrOfCommands(){
+        return splitUserInputString(gainUserCommandAsString());
     }
 
 

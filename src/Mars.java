@@ -25,7 +25,7 @@ public class Mars {
         this.mars.add(row3);
     }
 
-    boolean thereIsAnObstacleAtPosition(int positionX, int positionY) {
+    boolean isAnObstacleFoundAtPosition(int positionX, int positionY) {
         return mars.get(positionX).get(positionY).equals("X");
     }
 
