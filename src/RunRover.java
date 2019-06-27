@@ -12,7 +12,7 @@ public class RunRover {
 
         System.out.println("Rover has landed on Mars at position " + rover.roversStartingPosition() + ". \n");
 
-        String userInput = commands.gainUserCommandAsString(commands.getInput);
+        String userInput = commands.gainUserCommandAsString();
         List<Character> arrOfCommands = commands.splitUserInputString(userInput);
 
         rover.userCommandsToMoveRover(arrOfCommands);

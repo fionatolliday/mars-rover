@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 class Commands {
 
-    Scanner getInput;
 
-    Commands() {
-        this.getInput = new Scanner(System.in);
+    private Scanner getInput(){
+        return new Scanner(System.in);
     }
 
-    String gainUserCommandAsString(Scanner getInput) {
+    String gainUserCommandAsString() {
         String commandInputString;
 
         do {
@@ -20,7 +19,7 @@ class Commands {
                     "As " +
                     "an example, it should look something like this: FFLBLRBF");
 
-            commandInputString = getInput.nextLine().toUpperCase();
+            commandInputString = getInput().nextLine();
         }
         while(validateCommands(splitUserInputString(commandInputString)));
 
