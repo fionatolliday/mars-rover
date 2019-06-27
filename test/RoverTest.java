@@ -74,9 +74,9 @@ public class RoverTest {
         userCommands.add('F');
         userCommands.add('F');
         userCommands.add('L');
-        userCommands.add ('B');
+        userCommands.add('B');
         rover.userCommandsToMoveRover(userCommands);
 
-        
+
     }
 }

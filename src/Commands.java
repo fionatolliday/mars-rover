@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Commands {
 
 
-    private Scanner getInput(){
+    private Scanner getInput() {
         return new Scanner(System.in);
     }
 
@@ -21,7 +21,7 @@ class Commands {
 
             userInputString = getInput().nextLine();
         }
-        while(validateCommands(splitUserInputString(userInputString)));
+        while (validateCommands(splitUserInputString(userInputString)));
 
         return userInputString;
     }
@@ -37,7 +37,7 @@ class Commands {
         return arrOfCommands;
     }
 
-    List<Character> getArrOfCommands(){
+    List<Character> getArrOfCommands() {
         return splitUserInputString(gainUserCommandAsString());
     }
 
