@@ -103,26 +103,22 @@ public class Rover {
             switch (facingDirection) {
                 case 'N':
                     positionX -= 1;
-                    roverPosition += checkForEdge(positionX) + ",";
-                    roverPosition += checkForEdge(positionY);
+                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
                     break;
 
                 case 'S':
                     positionX += 1;
-                    roverPosition += checkForEdge(positionX) + ",";
-                    roverPosition += checkForEdge(positionY);
+                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
                     break;
 
                 case 'E':
                     positionY += 1;
-                    roverPosition += checkForEdge(positionX) + ",";
-                    roverPosition += checkForEdge(positionY);
+                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
                     break;
 
                 case 'W':
                     positionY -= 1;
-                    roverPosition += checkForEdge(positionX) + ",";
-                    roverPosition += checkForEdge(positionY);
+                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
                     break;
             }
         }

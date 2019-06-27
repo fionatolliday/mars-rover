@@ -1,7 +1,7 @@
 import java.util.List;
 
 
-public class Main {
+public class RunRover {
 
 
     public static void main(String[] args) {

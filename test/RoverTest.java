@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class RoverTest {
 
     private Rover rover = new Rover();
@@ -66,5 +68,15 @@ public class RoverTest {
         Assert.assertEquals(expectedPosition, actual);
     }
 
+    @Test
+    public void commandsMoveRover() {
+        ArrayList<Character> userCommands = new ArrayList<>();
+        userCommands.add('F');
+        userCommands.add('F');
+        userCommands.add('L');
+        userCommands.add ('B');
+        rover.userCommandsToMoveRover(userCommands);
 
+        
+    }
 }
