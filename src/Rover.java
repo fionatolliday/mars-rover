@@ -100,32 +100,29 @@ public class Rover {
 
     String moveRoverForward(char command) {
         int newPosition;
+        roverPosition = (positionX) + "," + (positionY);
 
         if (command == 'F') {
             switch (facingDirection) {
                 case 'N':
                     newPosition = positionX -= 1;
                     positionX = checkForEdge(newPosition);
-                    roverPosition = (positionX) + "," + (positionY);
-                    break;
+                    return roverPosition;
 
                 case 'S':
                     newPosition = positionX += 1;
                     positionX = checkForEdge(newPosition);
-                    roverPosition = (positionX) + "," + (positionY);
-                    break;
+                    return roverPosition;
 
                 case 'E':
                     newPosition = positionY += 1;
                     positionY = checkForEdge(newPosition);
-                    roverPosition = (positionX) + "," + (positionY);
-                    break;
+                    return roverPosition;
 
                 case 'W':
                     newPosition = positionY -= 1;
                     positionY = checkForEdge(newPosition);
-                    roverPosition = (positionX) + "," + (positionY);
-                    break;
+                    return roverPosition;
             }
         }
         return roverPosition;
