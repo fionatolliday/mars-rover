@@ -66,27 +66,32 @@ public class Rover {
 
 
     String moveRoverBackward(char command) {
+        int newPosition;
 
         if (command == 'B') {
             switch (facingDirection) {
                 case 'N':
-                    positionX += 1;
-                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
+                    newPosition = positionX += 1;
+                    positionX = checkForEdge(newPosition);
+                    roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'S':
-                    positionX -= 1;
-                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
+                    newPosition = positionX -= 1;
+                    positionX = checkForEdge(newPosition);
+                    roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'E':
-                    positionY -= 1;
-                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
+                    newPosition = positionY -= 1;
+                    positionY = checkForEdge(newPosition);
+                    roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'W':
-                    positionY += 1;
-                    roverPosition = checkForEdge(positionX) + "," + checkForEdge(positionY);
+                    newPosition = positionY += 1;
+                    positionY = checkForEdge(newPosition);
+                    roverPosition = (positionX) + "," + (positionY);
                     break;
             }
         }
@@ -94,30 +99,31 @@ public class Rover {
     }
 
     String moveRoverForward(char command) {
+        int newPosition;
 
         if (command == 'F') {
             switch (facingDirection) {
                 case 'N':
-                    int newPositionN = positionX -= 1;
-                    positionX = checkForEdge(newPositionN);
+                    newPosition = positionX -= 1;
+                    positionX = checkForEdge(newPosition);
                     roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'S':
-                    int newPositionS = positionX += 1;
-                    positionX = checkForEdge(newPositionS);
+                    newPosition = positionX += 1;
+                    positionX = checkForEdge(newPosition);
                     roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'E':
-                    int newPositionE = positionY += 1;
-                    positionY = checkForEdge(newPositionE);
+                    newPosition = positionY += 1;
+                    positionY = checkForEdge(newPosition);
                     roverPosition = (positionX) + "," + (positionY);
                     break;
 
                 case 'W':
-                    int newPositionW = positionY -= 1;
-                    positionY = checkForEdge(newPositionW);
+                    newPosition = positionY -= 1;
+                    positionY = checkForEdge(newPosition);
                     roverPosition = (positionX) + "," + (positionY);
                     break;
             }
