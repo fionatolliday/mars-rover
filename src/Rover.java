@@ -149,6 +149,8 @@ public class Rover {
         return currentMap.get(positionX).get(positionY).equals("X");
     }
 
+
+
     void userCommandsToMoveRover(List<Character> arrOfCommands) {
         String roversJourney = "";
         for (Character command : arrOfCommands) {

@@ -10,15 +10,7 @@ public class Mars {
 
     private List<List<String>> areaMap;
 
-    int getMaxHeightAndWidthOfMars() {
-        return 2;
-    }
-
-    int getMinHeightAndWidthOfMars() {
-        return 0;
-    }
-
-    Mars() {
+    private Mars() {
         this.areaMap = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", "X");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -28,8 +20,6 @@ public class Mars {
         this.areaMap.add(row2);
         this.areaMap.add(row3);
     }
-
-
 
 
 }
