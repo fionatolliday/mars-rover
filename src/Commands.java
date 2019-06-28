@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 class Commands {
 
-
     private Scanner getInput() {
         return new Scanner(System.in);
     }

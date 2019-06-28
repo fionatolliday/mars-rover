@@ -8,9 +8,11 @@ public class RunRover {
 
         Rover rover = new Rover();
         Commands commands = new Commands();
+        Mars mars = new Mars();
 
-        System.out.println("Rover has landed on Mars at position " + rover.roversStartingPosition() + ". \n");
+        System.out.println("Rover has landed on Mars at getPosition " + rover.getPosition() + ". \n");
 
+        rover.landRover(mars.getAreaMap());
         List<Character> arrayOfCommands = commands.getArrOfCommands();
         rover.userCommandsToMoveRover(arrayOfCommands);
     }

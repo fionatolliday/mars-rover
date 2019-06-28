@@ -2,12 +2,12 @@ import java.util.List;
 
 public class Rover {
 
-    Mars mars = new Mars();
 
     private int positionX;
     private int positionY;
     private char facingDirection;
     private String roverPosition;
+    private List<List<String>> currentMap;
 
     Rover() {
         this.positionX = 1;
@@ -16,16 +16,20 @@ public class Rover {
         this.roverPosition = "";
     }
 
-    String roversStartingPosition() {
-        String startingPosition = "";
-        startingPosition += positionX + ",";
-        startingPosition += positionY + ",";
-        startingPosition += facingDirection;
-        return startingPosition;
+    public void landRover(List<List<String>> map) {
+        currentMap = map;
+    }
+
+    public String getPosition() {
+        String position = "";
+        position += positionX + ",";
+        position += positionY + ",";
+        position += facingDirection;
+        return position;
     }
 
 
-    char changeFacingDirectionOfRover(char command) {
+    private char changeFacingDirectionOfRover(char command) {
         if (command == 'L') switch (facingDirection) {
             case 'N':
                 facingDirection = 'W';
@@ -65,7 +69,7 @@ public class Rover {
     }
 
 
-    void moveRoverBackward(char command) {
+    private void moveRoverBackward(char command) {
         int newPosition;
 
         if (command == 'B') {
@@ -97,7 +101,7 @@ public class Rover {
         }
     }
 
-    void moveRoverForward(char command) {
+    private void moveRoverForward(char command) {
         int newPosition;
 
         if (command == 'F') {
@@ -129,32 +133,37 @@ public class Rover {
         }
     }
 
-    int checkForEdge(int position) {
-        if (position > mars.getMaxHeightAndWidthOfMars()) {
-            return mars.getMinHeightAndWidthOfMars();
-        } else if (position < mars.getMinHeightAndWidthOfMars()) {
-            return mars.getMaxHeightAndWidthOfMars();
+    private int checkForEdge(int position) {
+//        int firstPosition = currentMap.size(0);
+
+        if (position > currentMap.size() - 1) {
+            return 0;
+        } else if (position < 0) {
+            return currentMap.size() - 1;
         }
         return position;
     }
 
+
+    boolean isAnObstacleFoundAtPosition(int positionX, int positionY) {
+        return currentMap.get(positionX).get(positionY).equals("X");
+    }
+
     void userCommandsToMoveRover(List<Character> arrOfCommands) {
         String roversJourney = "";
-
         for (Character command : arrOfCommands) {
             changeFacingDirectionOfRover(command);
 
-            if (!mars.isAnObstacleFoundAtPosition(positionX, positionY)) {
+            if (!isAnObstacleFoundAtPosition(positionX, positionY)) {
                 moveRoverBackward(command);
                 moveRoverForward(command);
             }
-            roversJourney += positionX + ",";
-            roversJourney += positionY + ",";
-            roversJourney += facingDirection + "  ";
+            roversJourney += getPosition() + "  ";
 
-            if (mars.isAnObstacleFoundAtPosition(positionX, positionY)) {
+
+            if (isAnObstacleFoundAtPosition(positionX, positionY)) {
                 System.out.println("Can no longer move. Obstacle " +
-                        "detected at position " + positionX + "," + positionY + ".");
+                        "detected at getPosition " + positionX + "," + positionY + ".");
                 break;
             }
         }

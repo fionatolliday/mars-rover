@@ -4,7 +4,11 @@ import java.util.List;
 
 public class Mars {
 
-    private List<List<String>> mars;
+    public List<List<String>> getAreaMap() {
+        return areaMap;
+    }
+
+    private List<List<String>> areaMap;
 
     int getMaxHeightAndWidthOfMars() {
         return 2;
@@ -15,19 +19,17 @@ public class Mars {
     }
 
     Mars() {
-        this.mars = new ArrayList<>();
+        this.areaMap = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", "X");
         List<String> row2 = Arrays.asList(" ", " ", " ");
         List<String> row3 = Arrays.asList(" ", "X", " ");
 
-        this.mars.add(row1);
-        this.mars.add(row2);
-        this.mars.add(row3);
+        this.areaMap.add(row1);
+        this.areaMap.add(row2);
+        this.areaMap.add(row3);
     }
 
-    boolean isAnObstacleFoundAtPosition(int positionX, int positionY) {
-        return mars.get(positionX).get(positionY).equals("X");
-    }
+
 
 
 }
