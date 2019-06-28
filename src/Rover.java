@@ -134,21 +134,21 @@ public class Rover {
     }
 
     private int checkForEdge(int position) {
-//        int firstPosition = currentMap.size(0);
+        int lowestBoundary = 0;
+        int highestBoundary = currentMap.size() - 1;
 
-        if (position > currentMap.size() - 1) {
-            return 0;
-        } else if (position < 0) {
-            return currentMap.size() - 1;
+        if (position > highestBoundary) {
+            return lowestBoundary;
+        } else if (position < lowestBoundary) {
+            return highestBoundary;
         }
         return position;
     }
 
 
-    boolean isAnObstacleFoundAtPosition(int positionX, int positionY) {
+    private boolean isThereAnObstacle(int positionX, int positionY) {
         return currentMap.get(positionX).get(positionY).equals("X");
     }
-
 
 
     void userCommandsToMoveRover(List<Character> arrOfCommands) {
@@ -156,14 +156,14 @@ public class Rover {
         for (Character command : arrOfCommands) {
             changeFacingDirectionOfRover(command);
 
-            if (!isAnObstacleFoundAtPosition(positionX, positionY)) {
+            if (!isThereAnObstacle(positionX, positionY)) {
                 moveRoverBackward(command);
                 moveRoverForward(command);
             }
             roversJourney += getPosition() + "  ";
 
 
-            if (isAnObstacleFoundAtPosition(positionX, positionY)) {
+            if (isThereAnObstacle(positionX, positionY)) {
                 System.out.println("Can no longer move. Obstacle " +
                         "detected at getPosition " + positionX + "," + positionY + ".");
                 break;
