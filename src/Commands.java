@@ -8,7 +8,7 @@ class Commands {
         return new Scanner(System.in);
     }
 
-    String gainUserCommandAsString() {
+    public String gainUserCommandAsString() {
         String userInputString;
 
         do {
@@ -41,7 +41,7 @@ class Commands {
     }
 
 
-    boolean validateCommands(List<Character> commands) {
+    private boolean validateCommands(List<Character> commands) {
         for (char characterCommand : commands) {
             char characterCommandUpperCase = Character.toUpperCase(characterCommand);
             if (characterCommandUpperCase != 'F' && characterCommandUpperCase != 'B' && characterCommandUpperCase != 'L' && characterCommandUpperCase != 'R') {

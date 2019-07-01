@@ -2,22 +2,31 @@ import java.util.List;
 
 public class Rover {
 
-
     private int positionX;
     private int positionY;
-    private char facingDirection;
+    private char facingDirection = 'x';
     private String roverPosition;
     private List<List<String>> currentMap;
 
-    Rover() {
-        this.positionX = 1;
-        this.positionY = 1;
-        this.facingDirection = 'N';
-        this.roverPosition = "";
-    }
+//    Rover() {
+//        this.positionX = 0;
+//        this.positionY = 0;
+//        this.facingDirection = 'N';
+//        this.roverPosition = "";
+//    }
 
-    public void landRover(List<List<String>> map) {
-        currentMap = map;
+    public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
+        if (positionX > map.size() - 1|| map.get(0).size() - 1 < positionY) {
+            throw new IllegalArgumentException("Rover position is out of bounds");
+        } else if (facingDirection != 'N' && facingDirection != 'S' && facingDirection != 'E' && facingDirection != 'W'){
+            throw new IllegalArgumentException("Facing direction is not valid");
+        }
+//        else if there is an obstacle where rover is being dropped.
+
+        this.currentMap = map;
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.facingDirection = facingDirection;
     }
 
     public String getPosition() {
@@ -29,7 +38,7 @@ public class Rover {
     }
 
 
-    private char changeFacingDirectionOfRover(char command) {
+    private void changeFacingDirectionOfRover(char command) {
         if (command == 'L') switch (facingDirection) {
             case 'N':
                 facingDirection = 'W';
@@ -64,8 +73,6 @@ public class Rover {
                 facingDirection = 'N';
                 break;
         }
-
-        return facingDirection;
     }
 
 
@@ -151,9 +158,9 @@ public class Rover {
     }
 
 
-    void userCommandsToMoveRover(List<Character> arrOfCommands) {
+    void moveRover(List<Character> arrayOfCommands) {
         String roversJourney = "";
-        for (Character command : arrOfCommands) {
+        for (Character command : arrayOfCommands) {
             changeFacingDirectionOfRover(command);
 
             if (!isThereAnObstacle(positionX, positionY)) {
@@ -172,15 +179,29 @@ public class Rover {
         System.out.println("Rover travelled through coordinates " + roversJourney + ".");
     }
 
-    void moveRover(List<Character> arrOfCommands) {
-        for (Character command : arrOfCommands) {
+    void moveRover1(List<Character> arrayOfCommands) {
+        String roversJourney = "";
+        for (Character command : arrayOfCommands) {
 //            change direction
+            changeFacingDirectionOfRover(command);
+
 //            move rover if possible
+            if(isThereAnObstacle(positionX, positionY)){
+                System.out.println("Can no longer move. Obstacle " +
+                        "detected at Position " + positionX + "," + positionY + ".");
+                break;
+            } else {
+                moveRoverBackward(command);
+                moveRoverForward(command);
+            }
+
+//            roversJourney += getPosition() + "  ";
 //              if yes, move rover + store journey
 //                if no, do not move + print end of trip message
 
         }
-
+        roversJourney += getPosition() + "  ";
+        System.out.println("Rover travelled through coordinates " + roversJourney + ".");
 //
     }
 

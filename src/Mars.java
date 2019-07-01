@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Mars {
+public class Mars implements Planet {
 
     public List<List<String>> getAreaMap() {
         return areaMap;
@@ -10,7 +10,7 @@ public class Mars {
 
     private List<List<String>> areaMap;
 
-    private Mars() {
+    public Mars() {
         this.areaMap = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", "X");
         List<String> row2 = Arrays.asList(" ", " ", " ");
