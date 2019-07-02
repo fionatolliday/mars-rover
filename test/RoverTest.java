@@ -105,5 +105,23 @@ public class RoverTest {
         Assert.assertEquals(expectedPosition, actualPosition);
     }
 
+    @Test
+    public void whenCommandIsB_RoverMovesBackwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+
+        List<Character> commands = Arrays.asList('F');
+
+        rover.landRover(map, 0, 1, 'N');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "1,1,N";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
 
 }
