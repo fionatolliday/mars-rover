@@ -25,26 +25,25 @@ class Commands {
         return userInputString;
     }
 
-    List<Character> splitUserInputString(String userInput) {
-        List<Character> arrOfCommands = new ArrayList<>();
+    private List<String> splitUserInputString(String userInput) {
+        List<String> arrOfCommands = new ArrayList<>();
 
-        char[] userInputChars = userInput.toCharArray();
+        String[] userInputCommands = userInput.split("");
         for (int i = 0; i < userInput.length(); i++) {
-            char current = userInputChars[i];
+            String current = userInputCommands[i].toUpperCase();
             arrOfCommands.add(current);
         }
         return arrOfCommands;
     }
 
-    List<Character> getArrOfCommands() {
+    public List<String> getArrOfCommands() {
         return splitUserInputString(gainUserCommandAsString());
     }
 
 
-    private boolean validateCommands(List<Character> commands) {
-        for (char characterCommand : commands) {
-            char characterCommandUpperCase = Character.toUpperCase(characterCommand);
-            if (characterCommandUpperCase != 'F' && characterCommandUpperCase != 'B' && characterCommandUpperCase != 'L' && characterCommandUpperCase != 'R') {
+    private boolean validateCommands(List<String> commands) {
+        for (String characterCommand : commands) {
+            if (characterCommand.equals('F') || characterCommand.equals('B') || characterCommand.equals('L') || characterCommand.equals('R')) {
                 return true;
             }
         }

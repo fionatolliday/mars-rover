@@ -20,7 +20,7 @@ public class RunRover {
         System.out.println("Rover has landed on Mars at getPosition " + rover.getPosition() +
                 ". \n");
 
-        List<Character> arrayOfCommands = commands.getArrOfCommands();
+        List<String> arrayOfCommands = commands.getArrOfCommands();
         rover.moveRover(arrayOfCommands);
     }
 

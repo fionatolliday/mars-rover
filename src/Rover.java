@@ -151,16 +151,15 @@ public class Rover {
     }
 
 
-    void moveRover(List<Character> arrayOfCommands) {
-        for (Character command : arrayOfCommands) {
-            String commandString = Character.toString(command);
-            if (commandString.equalsIgnoreCase("L")) {
+    void moveRover(List<String> arrayOfCommands) {
+        for (String command : arrayOfCommands) {
+            if ("L".equalsIgnoreCase(command)) {
                 changeRoverFacingDirectionToLeft();
-            } else if (commandString.equalsIgnoreCase("R")) {
+            } else if ("R".equalsIgnoreCase(command)) {
                 changeRoverFacingDirectionToRight();
-            } else if (commandString.equalsIgnoreCase("B")) {
+            } else if ("B".equalsIgnoreCase(command)) {
                 moveRoverBackward();
-            } else if (commandString.equalsIgnoreCase("F")) {
+            } else if ("F".equalsIgnoreCase(command)) {
                 moveRoverForward();
             }
             if (isThereAnObstacle(positionX, positionY)) {
