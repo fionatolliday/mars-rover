@@ -56,18 +56,6 @@ public class RoverTest {
     }
 
 
-    @Test
-    public void thereIsAnObstacleAtPosition02() {
-        List<List<String>> map = new ArrayList<>();
-
-        List<String> row1 = Arrays.asList(" ", " ", "X");
-        List<String> row2 = Arrays.asList(" ", " ", " ");
-        List<String> row3 = Arrays.asList(" ", "X", " ");
-
-        map.add(row1);
-        map.add(row2);
-        map.add(row3);
-    }
 
 
 //    @Test
@@ -130,7 +118,7 @@ public class RoverTest {
         userCommands.add('F');
         userCommands.add('L');
         userCommands.add('B');
-        rover.moveRover(userCommands);
+        //rover.moveRover(userCommands);
     }
 
 

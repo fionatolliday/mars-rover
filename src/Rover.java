@@ -16,9 +16,9 @@ public class Rover {
 //    }
 
     public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
-        if (positionX > map.size() - 1|| map.get(0).size() - 1 < positionY) {
+        if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
             throw new IllegalArgumentException("Rover position is out of bounds");
-        } else if (facingDirection != 'N' && facingDirection != 'S' && facingDirection != 'E' && facingDirection != 'W'){
+        } else if (facingDirection != 'N' && facingDirection != 'S' && facingDirection != 'E' && facingDirection != 'W') {
             throw new IllegalArgumentException("Facing direction is not valid");
         }
 //        else if there is an obstacle where rover is being dropped.
@@ -38,8 +38,8 @@ public class Rover {
     }
 
 
-    private void changeFacingDirectionOfRover(char command) {
-        if (command == 'L') switch (facingDirection) {
+    private void changeRoverFacingDirectionToLeft() {
+        switch (facingDirection) {
             case 'N':
                 facingDirection = 'W';
                 break;
@@ -56,7 +56,10 @@ public class Rover {
                 facingDirection = 'S';
                 break;
         }
-        else if (command == 'R') switch (facingDirection) {
+    }
+
+    private void changeRoverFacingDirectionToRight() {
+        switch (facingDirection) {
             case 'N':
                 facingDirection = 'E';
                 break;
@@ -76,68 +79,66 @@ public class Rover {
     }
 
 
-    private void moveRoverBackward(char command) {
+    private void moveRoverBackward() {
         int newPosition;
 
-        if (command == 'B') {
-            switch (facingDirection) {
-                case 'N':
-                    positionX += 1;
-                    newPosition = positionX;
-                    positionX = checkForEdge(newPosition);
-                    break;
+        switch (facingDirection) {
+            case 'N':
+                positionX += 1;
+                newPosition = positionX;
+                positionX = checkForEdge(newPosition);
+                break;
 
-                case 'S':
-                    positionX -= 1;
-                    newPosition = positionX;
-                    positionX = checkForEdge(newPosition);
-                    break;
+            case 'S':
+                positionX -= 1;
+                newPosition = positionX;
+                positionX = checkForEdge(newPosition);
+                break;
 
-                case 'E':
-                    positionY -= 1;
-                    newPosition = positionY;
-                    positionY = checkForEdge(newPosition);
-                    break;
+            case 'E':
+                positionY -= 1;
+                newPosition = positionY;
+                positionY = checkForEdge(newPosition);
+                break;
 
-                case 'W':
-                    positionY += 1;
-                    newPosition = positionY;
-                    positionY = checkForEdge(newPosition);
-                    break;
-            }
+            case 'W':
+                positionY += 1;
+                newPosition = positionY;
+                positionY = checkForEdge(newPosition);
+                break;
         }
+
     }
 
-    private void moveRoverForward(char command) {
+    private void moveRoverForward() {
         int newPosition;
 
-        if (command == 'F') {
-            switch (facingDirection) {
-                case 'N':
-                    positionX -= 1;
-                    newPosition = positionX;
-                    positionX = checkForEdge(newPosition);
-                    break;
+        switch (facingDirection) {
+            case 'N':
+                positionX -= 1;
+                newPosition = positionX;
+                positionX = checkForEdge(newPosition);
+                break;
 
-                case 'S':
-                    positionX += 1;
-                    newPosition = positionX;
-                    positionX = checkForEdge(newPosition);
-                    break;
+            case 'S':
+                positionX += 1;
+                newPosition = positionX;
+                positionX = checkForEdge(newPosition);
+                break;
 
-                case 'E':
-                    positionY += 1;
-                    newPosition = positionY;
-                    positionY = checkForEdge(newPosition);
-                    break;
+            case 'E':
+                positionY += 1;
+                newPosition = positionY;
+                positionY = checkForEdge(newPosition);
+                break;
 
-                case 'W':
-                    positionY -= 1;
-                    newPosition = positionY;
-                    positionY = checkForEdge(newPosition);
-                    break;
-            }
+            case 'W':
+                positionY -= 1;
+                newPosition = positionY;
+                positionY = checkForEdge(newPosition);
+                break;
         }
+
     }
 
     private int checkForEdge(int position) {
@@ -157,52 +158,26 @@ public class Rover {
         return currentMap.get(positionX).get(positionY).equals("X");
     }
 
-
     void moveRover(List<Character> arrayOfCommands) {
-        String roversJourney = "";
         for (Character command : arrayOfCommands) {
-            changeFacingDirectionOfRover(command);
-
-            if (!isThereAnObstacle(positionX, positionY)) {
-                moveRoverBackward(command);
-                moveRoverForward(command);
+            String commandString = Character.toString(command);
+            if (commandString.equalsIgnoreCase("L")){
+                changeRoverFacingDirectionToLeft();
+            } else if(commandString.equalsIgnoreCase("R")) {
+                changeRoverFacingDirectionToRight();
+            } else if (commandString.equalsIgnoreCase("B")) {
+                moveRoverBackward();
+            } else if (commandString.equalsIgnoreCase("F")) {
+                moveRoverForward();
             }
-            roversJourney += getPosition() + "  ";
-
-
             if (isThereAnObstacle(positionX, positionY)) {
                 System.out.println("Can no longer move. Obstacle " +
-                        "detected at getPosition " + positionX + "," + positionY + ".");
+                        "detected at position " + positionX + "," + positionY + ".");
                 break;
             }
+            System.out.println("For Command: " + command + "," + "Rover travelled through " +
+                    "coordinates  " + getPosition() +
+                    ".");
         }
-        System.out.println("Rover travelled through coordinates " + roversJourney + ".");
     }
-
-    void moveRover1(List<Character> arrayOfCommands) {
-        String roversJourney = "";
-        for (Character command : arrayOfCommands) {
-//            change direction
-            changeFacingDirectionOfRover(command);
-
-//            move rover if possible
-            if(isThereAnObstacle(positionX, positionY)){
-                System.out.println("Can no longer move. Obstacle " +
-                        "detected at Position " + positionX + "," + positionY + ".");
-                break;
-            } else {
-                moveRoverBackward(command);
-                moveRoverForward(command);
-            }
-
-//            roversJourney += getPosition() + "  ";
-//              if yes, move rover + store journey
-//                if no, do not move + print end of trip message
-
-        }
-        roversJourney += getPosition() + "  ";
-        System.out.println("Rover travelled through coordinates " + roversJourney + ".");
-//
-    }
-
 }

@@ -13,8 +13,8 @@ public class RunRover {
 
         Planet mars = planetFactory.getAreaMap("mars");
         List<List<String>>  map = mars.getAreaMap();
-        int positionX = 5;
-        int positionY = 4;
+        int positionX = 1;
+        int positionY = 1;
         char facingDirection = 'N';
         rover.landRover(map, positionX, positionY, facingDirection);
         System.out.println("Rover has landed on Mars at getPosition " + rover.getPosition() +
