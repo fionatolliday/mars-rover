@@ -5,15 +5,7 @@ public class Rover {
     private int positionX;
     private int positionY;
     private char facingDirection = 'x';
-    private String roverPosition;
     private List<List<String>> currentMap;
-
-//    Rover() {
-//        this.positionX = 0;
-//        this.positionY = 0;
-//        this.facingDirection = 'N';
-//        this.roverPosition = "";
-//    }
 
     public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
         if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
@@ -158,12 +150,13 @@ public class Rover {
         return currentMap.get(positionX).get(positionY).equals("X");
     }
 
+
     void moveRover(List<Character> arrayOfCommands) {
         for (Character command : arrayOfCommands) {
             String commandString = Character.toString(command);
-            if (commandString.equalsIgnoreCase("L")){
+            if (commandString.equalsIgnoreCase("L")) {
                 changeRoverFacingDirectionToLeft();
-            } else if(commandString.equalsIgnoreCase("R")) {
+            } else if (commandString.equalsIgnoreCase("R")) {
                 changeRoverFacingDirectionToRight();
             } else if (commandString.equalsIgnoreCase("B")) {
                 moveRoverBackward();

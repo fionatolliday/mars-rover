@@ -55,10 +55,23 @@ public class RoverTest {
         rover.landRover(map, expectedPositionX, expectedPositionY, expectedHeading);
     }
 
+    @Test
+    public void whenCommandIsL_RoverTurnsLeft() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
 
+        List<Character> commands = Arrays.asList('L');
 
+        rover.landRover(map, 0, 1, 'N');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "0,1,W";
 
-//    @Test
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    //    @Test
 //    public void moveRoverForward() {
 //        String expectedForwardPosition = "0,1";
 //        Assert.assertEquals(expectedForwardPosition, rover.moveRoverForward('F'));
@@ -118,7 +131,7 @@ public class RoverTest {
         userCommands.add('F');
         userCommands.add('L');
         userCommands.add('B');
-        //rover.moveRover(userCommands);
+        rover.moveRover(userCommands);
     }
 
 
