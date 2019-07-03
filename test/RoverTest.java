@@ -184,8 +184,89 @@ public class RoverTest {
         Assert.assertEquals(expectedPosition, actualPosition);
     }
 
+
     @Test
-    public void whenCommandIsF_RoverMovesForwardOneSpot() {
+    public void whenCommandIsBAndFacingN_RoverMovesBackwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("B");
+
+        rover.landRover(map, 1, 1, 'N');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "2,1,N";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBAndFacingS_RoverMovesBackwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("B");
+
+        rover.landRover(map, 0, 1, 'S');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "2,1,S";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBAndFacingE_RoverMovesBackwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("B");
+
+        rover.landRover(map, 1, 1, 'E');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "1,0,E";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBAndFacingW_RoverMovesBackwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("B");
+
+        rover.landRover(map, 0, 1, 'W');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "0,2,W";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsFAndFacingN_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -203,7 +284,47 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsB_RoverMovesBackwardOneSpot() {
+    public void whenCommandIsFAndFacingS_RoverMovesForwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("F");
+
+        rover.landRover(map, 1, 1, 'S');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "2,1,S";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBAndFacingE_RoverMovesForwardOneSpot() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        List<String> row2 = Arrays.asList(" ", " ", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+        map.add(row2);
+        map.add(row3);
+
+        List<String> commands = Arrays.asList("F");
+
+        rover.landRover(map, 1, 1, 'E');
+        rover.moveRover(commands);
+        String actualPosition = rover.getPosition();
+        String expectedPosition = "1,2,E";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBAndFacingW_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -212,13 +333,12 @@ public class RoverTest {
 
         List<String> commands = Arrays.asList("F");
 
-        rover.landRover(map, 0, 1, 'N');
+        rover.landRover(map, 0, 1, 'W');
         rover.moveRover(commands);
         String actualPosition = rover.getPosition();
-        String expectedPosition = "1,1,N";
+        String expectedPosition = "0,0,W";
 
         Assert.assertEquals(expectedPosition, actualPosition);
     }
-
 
 }

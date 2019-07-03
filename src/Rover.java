@@ -72,68 +72,57 @@ public class Rover {
 
 
     private void moveRoverBackward() {
-        int newPosition;
-
         switch (facingDirection) {
             case 'N':
                 positionX += 1;
-                newPosition = positionX;
-                positionX = checkForEdge(newPosition);
+                positionX = getNextPosition(positionX);
                 break;
 
             case 'S':
                 positionX -= 1;
-                newPosition = positionX;
-                positionX = checkForEdge(newPosition);
+                positionX = getNextPosition(positionX);
                 break;
 
             case 'E':
                 positionY -= 1;
-                newPosition = positionY;
-                positionY = checkForEdge(newPosition);
+                positionY = getNextPosition(positionY);
                 break;
 
             case 'W':
                 positionY += 1;
-                newPosition = positionY;
-                positionY = checkForEdge(newPosition);
+                positionY = getNextPosition(positionY);
                 break;
         }
 
     }
 
     private void moveRoverForward() {
-        int newPosition;
 
         switch (facingDirection) {
             case 'N':
                 positionX -= 1;
-                newPosition = positionX;
-                positionX = checkForEdge(newPosition);
+                positionX = getNextPosition(positionX);
                 break;
 
             case 'S':
                 positionX += 1;
-                newPosition = positionX;
-                positionX = checkForEdge(newPosition);
+                positionX = getNextPosition(positionX);
                 break;
 
             case 'E':
                 positionY += 1;
-                newPosition = positionY;
-                positionY = checkForEdge(newPosition);
+                positionY = getNextPosition(positionY);
                 break;
 
             case 'W':
                 positionY -= 1;
-                newPosition = positionY;
-                positionY = checkForEdge(newPosition);
+                positionY = getNextPosition(positionY);
                 break;
         }
 
     }
 
-    private int checkForEdge(int position) {
+    private int getNextPosition(int position) {
         int lowestBoundary = 0;
         int highestBoundary = currentMap.size() - 1;
 
@@ -142,6 +131,7 @@ public class Rover {
         } else if (position < lowestBoundary) {
             return highestBoundary;
         }
+
         return position;
     }
 
