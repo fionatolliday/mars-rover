@@ -1,5 +1,5 @@
 import java.util.List;
-
+import java.util.Scanner;
 
 public class RunRover {
 
@@ -7,21 +7,31 @@ public class RunRover {
     public static void main(String[] args) {
 
         Rover rover = new Rover();
-        Commands commands = new Commands();
+        CommandProcessor commandProcessor = new CommandProcessor();
         PlanetFactory planetFactory = new PlanetFactory();
-
+        Scanner getInput = new Scanner(System.in);
 
         Planet mars = planetFactory.getAreaMap("mars");
-        List<List<String>>  map = mars.getAreaMap();
-        int positionX = 1;
-        int positionY = 1;
-        char facingDirection = 'N';
-        rover.landRover(map, positionX, positionY, facingDirection);
-        System.out.println("Rover has landed on Mars at getPosition " + rover.getPosition() +
+        List<List<String>> map = mars.getAreaMap();
+
+        rover.landRover(map, 1, 1, 'N');
+
+        System.out.println("Rover has landed on Mars at position " + rover.getPosition() +
                 ". \n");
 
-        List<String> arrayOfCommands = commands.getArrOfCommands();
-        rover.moveRover(arrayOfCommands);
+        String userInputString;
+        do {
+            System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
+                    "backwards (B).  \n Please enter your commands.  " +
+                    "\n" +
+                    "As " +
+                    "an example, it should look something like this: FFLBLRBF");
+
+            userInputString = getInput.nextLine();
+        }
+        while (!commandProcessor.processCommands(userInputString));
+
+        rover.moveRover(commandProcessor.splitUserInputString(userInputString));
     }
 
 }

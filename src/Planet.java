@@ -5,3 +5,4 @@ public interface Planet {
      List<List<String>> getAreaMap();
 
 }
+
