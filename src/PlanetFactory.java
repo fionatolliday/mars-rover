@@ -6,6 +6,8 @@ public class PlanetFactory {
         }
         if(planetName.equalsIgnoreCase("Mars")) {
             return new Mars();
+        } else if(planetName.equalsIgnoreCase("Earth")){
+            return new Earth();
         }
         return null;
     }

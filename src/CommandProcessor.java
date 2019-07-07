@@ -1,14 +1,11 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 class CommandProcessor {
 
-
     public boolean processCommands(String userInput) {
-        List<String> listOfCommands = splitUserInputString(userInput);
 
+        List<String> listOfCommands = splitUserInputString(userInput);
         return validateCommands(listOfCommands);
     }
 
@@ -30,7 +27,10 @@ class CommandProcessor {
     }
 
     private boolean isValid(String command) {
-        return command.equalsIgnoreCase("F") || command.equalsIgnoreCase("B") || command.equalsIgnoreCase("L") || command.equalsIgnoreCase("R");
+        return command.equalsIgnoreCase("F") ||
+                command.equalsIgnoreCase("B") ||
+                command.equalsIgnoreCase("L") ||
+                command.equalsIgnoreCase("R");
     }
 
 }

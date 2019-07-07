@@ -4,7 +4,7 @@ public class Rover {
 
     private int positionX;
     private int positionY;
-    private char facingDirection = 'x';
+    private char facingDirection;
     private List<List<String>> currentMap;
 
     public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
