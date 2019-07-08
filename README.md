@@ -20,13 +20,13 @@ Once the list of commands have been implemented by the program, the program will
 the rover journey before exiting.
 
 ### Run Rover
-The RunRover class was created as a start point to run this project.
-Within this class is a main function that reads from the command line.
+The `RunRover` class was created as a start point to run this project.
+Within this class is a `main` function that reads from the command line.
 
-It is in the main method where Rover has been hardcoded to land at coordinates 1,1,N on planet Mars.
+It is in the `main` method where Rover has been hardcoded to land at coordinates 1,1,N on planet Mars.
 
 
-The main function accesses the Rover Class and the runRover function in order to send rover on his
+The `main` function accesses the `Rover` Class and the `runRover` function in order to send rover on his
 journey.  When the journey concludes, his journey will be printed to the
 command line, including whether or not he hit an obstacle before terminating.
 
@@ -35,7 +35,7 @@ Mars has been created on a 3x3 grid.
 The X-axis represents the horizontal axis, whilst the Y-axis represents the vertical axis.
 The areaMap includes two obstacles at position 0,2 and position 2,1.
 
-Mars implements from the Planet interface.  The interface has been created as part of a factory
+`Mars` implements from the `Planet` interface.  The interface has been created as part of a factory
 pattern.  Rover is dependent on an areaMap.  Therefore planetFactory has been created to allow
 additional planets be added for Rover to roam.
 
