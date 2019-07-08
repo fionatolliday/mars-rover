@@ -29,7 +29,6 @@ public class Rover {
         return position;
     }
 
-
     private void changeRoverFacingDirectionToLeft() {
         switch (facingDirection) {
             case 'N':
@@ -140,7 +139,6 @@ public class Rover {
         return currentMap.get(positionX).get(positionY).equals("X");
     }
 
-
     void moveRover(List<String> arrayOfCommands) {
         for (String command : arrayOfCommands) {
             if ("L".equalsIgnoreCase(command)) {
@@ -162,4 +160,6 @@ public class Rover {
                     ".");
         }
     }
+
+
 }

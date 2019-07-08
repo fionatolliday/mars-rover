@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Mars implements Planet {
 
+    @Override
     public List<List<String>> getAreaMap() {
         return areaMap;
     }
