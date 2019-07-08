@@ -1,12 +1,25 @@
 # Run project
+
+### Running the code
 Needs: `Java` installed
 
-### Program
 1. Go to git repository: [gitHub](https://github.com/fionatolliday/mars-rover)
 2. Go to the `out` folder and download the `MarsRover.jar` file
 3. In terminal, navigate to local folder where jar file was downloaded
-4. Then run command `java -jar MarsRover.jar`
+4. Run command `java -jar MarsRover.jar`
 5. Play game
+
+### Setting up your dev environment
+Needs: `Java` installed & `intelliJ` (SDK11)
+
+1. Go to git repository: [gitHub](https://github.com/fionatolliday/mars-rover)
+2. Clone repository
+3. Open intelliJ and navigate to folder with repository. Open file.
+4. Create jar file by following steps at: (https://stackoverflow
+.com/questions/1082580/how-to-build-jars-from-intellij-properly)
+5. In terminal, navigate to local folder where jar file was saved
+6. Run command `java -jar MarsRover.jar`
+7. Play game
 
 
 ## About the code
