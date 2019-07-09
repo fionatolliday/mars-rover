@@ -143,7 +143,7 @@ public class Rover {
 
     void moveRover(List<String> arrayOfCommands) {
         for (String command : arrayOfCommands) {
-            if ("L".equalsIgnoreCase(command)) {
+            if ("L"== command) {
                 changeRoverFacingDirectionToLeft();
             } else if ("R".equalsIgnoreCase(command)) {
                 changeRoverFacingDirectionToRight();
