@@ -197,10 +197,10 @@ public class RoverTest {
 
         List<String> commands = Arrays.asList("B");
 
-        rover.landRover(map, 1, 1, 'N');
+        rover.landRover(map, 2, 1, 'N');
         rover.moveRover(commands);
         String actualPosition = rover.getPosition();
-        String expectedPosition = "2,1,N";
+        String expectedPosition = "0,1,N";
 
         Assert.assertEquals(expectedPosition, actualPosition);
     }
@@ -275,10 +275,10 @@ public class RoverTest {
 
         List<String> commands = Arrays.asList("F");
 
-        rover.landRover(map, 1, 1, 'N');
+        rover.landRover(map, 0, 1, 'N');
         rover.moveRover(commands);
         String actualPosition = rover.getPosition();
-        String expectedPosition = "0,1,N";
+        String expectedPosition = "1,1,N";
 
         Assert.assertEquals(expectedPosition, actualPosition);
     }
