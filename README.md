@@ -1,6 +1,5 @@
 # Mars Rover
-The Mars Rover kata problem can be viewed [here](https://github
-.com/MYOB-Technology/General_Developer/blob/master/katas/kata-mars-rover/kata-mars-rover.mdgit)
+The Mars Rover kata problem can be viewed [here](https://github.com/MYOB-Technology/General_Developer/blob/master/katas/kata-mars-rover/kata-mars-rover.md)
 
 # Run project
 
