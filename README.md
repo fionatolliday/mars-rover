@@ -3,9 +3,10 @@ The Mars Rover kata problem can be viewed [here](https://github.com/MYOB-Technol
 
 # Run project
 
-### Running the code
+### Prerequisite Section
 Needs: `Java` installed
 
+### Running the code
 1. Go to git repository: [gitHub](https://github.com/fionatolliday/mars-rover)
 2. Go to the `out` folder and download the `MarsRover.jar` file
 3. In terminal, navigate to local folder where jar file was downloaded
