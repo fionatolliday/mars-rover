@@ -1,6 +1,6 @@
 # Mars Rover
 The Mars Rover kata problem can be viewed [here](https://github
-.com/fionatolliday/mars-rover/blob/master/TheProblem.md)
+.com/MYOB-Technology/General_Developer/blob/master/katas/kata-mars-rover/kata-mars-rover.mdgit)
 
 # Run project
 
@@ -41,6 +41,8 @@ The `RunRover` class was created as a start point to run this project.
 Within this class is a `main` function that reads from the command line.
 
 It is in the `main` method where Rover has been hardcoded to land at coordinates 1,1,N on planet Mars.
+If the landing coordinates are changed to land a) out of bounds of the map or b) where an obstacle
+lies, an illegal argument will be thrown.
 
 
 The `main` function accesses the `Rover` Class and the `runRover` function in order to send rover on his
