@@ -56,7 +56,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsLAndFacingN_RoverTurnsLeftChangingFacingDirectionToW() {
+    public void whenCommandIsLAndFacingNorth_RoverTurnsLeftChangingFacingDirectionToWest() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -72,7 +72,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsLAndFacingW_RoverTurnsLeftChangingFacingDirectionToS() {
+    public void whenCommandIsLAndFacingWest_RoverTurnsLeftChangingFacingDirectionToSouth() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -88,7 +88,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsLAndFacingS_RoverTurnsLeftChangingFacingDirectionToE() {
+    public void whenCommandIsLAndFacingSouth_RoverTurnsLeftChangingFacingDirectionToEast() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -104,7 +104,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsLAndFacingE_RoverTurnsLeftChangingFacingDirectionToN() {
+    public void whenCommandIsLAndFacingEast_RoverTurnsLeftChangingFacingDirectionToNorth() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -121,7 +121,7 @@ public class RoverTest {
 
 
     @Test
-    public void whenCommandIsRAndFacingN_RoverTurnsRightChangingFacingDirectionToE() {
+    public void whenCommandIsRAndFacingNorth_RoverTurnsRightChangingFacingDirectionToEast() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -137,7 +137,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsRAndFacingE_RoverTurnsRightChangingFacingDirectionToS() {
+    public void whenCommandIsRAndFacingEast_RoverTurnsRightChangingFacingDirectionToSouth() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -153,7 +153,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsRAndFacingS_RoverTurnsRightChangingFacingDirectionToW() {
+    public void whenCommandIsRAndFacingSouth_RoverTurnsRightChangingFacingDirectionToWest() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -169,7 +169,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsRAndFacingW_RoverTurnsRightChangingFacingDirectionToN() {
+    public void whenCommandIsRAndFacingWest_RoverTurnsRightChangingFacingDirectionToNorth() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
@@ -186,7 +186,7 @@ public class RoverTest {
 
 
     @Test
-    public void whenCommandIsBAndFacingN_RoverMovesBackwardOneSpot() {
+    public void whenCommandIsBAndFacingNorth_RoverMovesBackwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -206,7 +206,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsBAndFacingS_RoverMovesBackwardOneSpot() {
+    public void whenCommandIsBAndFacingSouth_RoverMovesBackwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -226,7 +226,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsBAndFacingE_RoverMovesBackwardOneSpot() {
+    public void whenCommandIsBAndFacingEast_RoverMovesBackwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -246,7 +246,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsBAndFacingW_RoverMovesBackwardOneSpot() {
+    public void whenCommandIsBAndFacingWest_RoverMovesBackwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -266,7 +266,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsFAndFacingN_RoverMovesForwardOneSpot() {
+    public void whenCommandIsFAndFacingNorth_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -284,7 +284,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsFAndFacingS_RoverMovesForwardOneSpot() {
+    public void whenCommandIsFAndFacingSouth_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -304,7 +304,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsBAndFacingE_RoverMovesForwardOneSpot() {
+    public void whenCommandIsBAndFacingEast_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");
@@ -324,7 +324,7 @@ public class RoverTest {
     }
 
     @Test
-    public void whenCommandIsBAndFacingW_RoverMovesForwardOneSpot() {
+    public void whenCommandIsBAndFacingWest_RoverMovesForwardOneSpot() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         List<String> row2 = Arrays.asList(" ", " ", " ");

@@ -1,3 +1,7 @@
+# Mars Rover
+The Mars Rover kata problem can be viewed [here](https://github
+.com/fionatolliday/mars-rover/blob/master/TheProblem.md)
+
 # Run project
 
 ### Running the code
