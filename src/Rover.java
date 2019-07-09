@@ -7,6 +7,7 @@ public class Rover {
     private char facingDirection;
     private List<List<String>> currentMap;
 
+
     public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
         if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
             throw new IllegalArgumentException("Rover position is out of bounds");

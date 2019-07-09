@@ -12,6 +12,7 @@ public class RunRover {
         Scanner getInput = new Scanner(System.in);
 
         Planet mars = planetFactory.getAreaMap("mars");
+
         List<List<String>> map = mars.getAreaMap();
 
         rover.landRover(map, 1, 1, 'N');

@@ -24,9 +24,10 @@ public class RoverTest {
 
         int expectedPositionX = 1;
         int expectedPositionY = 2;
-        char expectedHeading = 'N';
+        char expectedFacing = 'N';
         String expectedPosition = "1,2,N";
-        rover.landRover(map, expectedPositionX, expectedPositionY, expectedHeading);
+
+        rover.landRover(map, expectedPositionX, expectedPositionY, expectedFacing);
 
         String actualPosition = rover.getPosition();
 
@@ -36,23 +37,36 @@ public class RoverTest {
     @Test(expected = IllegalArgumentException.class)
     public void whenRoverIsLandedOutOfBounds_ItShouldThrowAnIllegalArgumentException() {
         List<List<String>> map = new ArrayList<>();
-        int expectedPositionX = 1;
-        int expectedPositionY = 4;
-        char expectedHeading = 'N';
-        rover.landRover(map, expectedPositionX, expectedPositionY, expectedHeading);
+        int positionX = 1;
+        int positionY = 4;
+        char facing = 'N';
+        rover.landRover(map, positionX, positionY, facing);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void whenRoverIsLandedWithInvalidHeading_ItShouldThrowAnIllegalArgumentException() {
+    public void whenRoverIsLandedWithInvalidFacingDirection_ItShouldThrowAnIllegalArgumentException() {
         List<List<String>> map = new ArrayList<>();
         List<String> row1 = Arrays.asList(" ", " ", " ");
         map.add(row1);
 
-        int expectedPositionX = 0;
-        int expectedPositionY = 0;
-        char expectedHeading = 'G';
+        int positionX = 0;
+        int positionY = 0;
+        char facing = 'G';
 
-        rover.landRover(map, expectedPositionX, expectedPositionY, expectedHeading);
+        rover.landRover(map, positionX, positionY, facing);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenRoverIsLandedOnAnObstacle_ItShouldThrowAnIllegalArgumentException() {
+        List<List<String>> map = new ArrayList<>();
+        List<String> row1 = Arrays.asList(" ", " ", " ");
+        map.add(row1);
+
+        int positionX = 2;
+        int positionY = 1;
+        char facing = 'N';
+
+        rover.landRover(map, positionX, positionY, facing);
     }
 
     @Test
