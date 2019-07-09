@@ -82,5 +82,5 @@ exit once these commands have been executed.
 * Rover can move forward or backward, not diagonal.
 * Rover is currently coded to land at position 1,1,N
 * Mars is a 3x3 grid. Rover will check for boundaries on this grid as well as obstacles.
-*
+
 
