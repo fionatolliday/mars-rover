@@ -29,7 +29,7 @@ Needs: `Java` installed & `intelliJ` (SDK11)
     * JAR folder will appear in the 'out' folder of the file
 6. In terminal, navigate to local folder where jar file was saved
 7. Run command `java -jar MarsRover.jar`
-8. Play game
+8. Input commands to move Rover
 
 
 ## About the code
