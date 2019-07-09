@@ -19,11 +19,17 @@ Needs: `Java` installed & `intelliJ` (SDK11)
 1. Go to git repository: [gitHub](https://github.com/fionatolliday/mars-rover)
 2. Clone repository
 3. Open intelliJ and navigate to folder with repository. Open file.
-4. Create jar file by following steps at: (https://stackoverflow
-.com/questions/1082580/how-to-build-jars-from-intellij-properly)
-5. In terminal, navigate to local folder where jar file was saved
-6. Run command `java -jar MarsRover.jar`
-7. Play game
+4. Create JAR file:
+    * In intelliJ go to File, Project Structure, Artifacts
+    * Press the + sign to add Artifact
+    * Select JAR, from modules with dependencies
+    * Select the main class, hit OK and then hit OK again
+5. Build JAR file:
+    * In intelliJ go to Build menu, Build artifact, Click build
+    * JAR folder will appear in the 'out' folder of the file
+6. In terminal, navigate to local folder where jar file was saved
+7. Run command `java -jar MarsRover.jar`
+8. Play game
 
 
 ## About the code
@@ -67,4 +73,14 @@ Rover can move one spot at a time; either one step forward or one step backward.
 Rover does not move diagonally and cannot move into a position on the grid that has an obstacle.
 When checking for his next move Rover checks the highest and lowest boundary to ensure he continues
 his journey **around** the world.
+
+
+### Assumptions made when building
+* The code is built so that it takes an initial set of commands to move rover.  The program will
+exit once these commands have been executed.
+* For each command, Rover will make one turn or move one position.
+* Rover can move forward or backward, not diagonal.
+* Rover is currently coded to land at position 1,1,N
+* Mars is a 3x3 grid. Rover will check for boundaries on this grid as well as obstacles.
+*
 
