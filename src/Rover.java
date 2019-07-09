@@ -12,8 +12,9 @@ public class Rover {
             throw new IllegalArgumentException("Rover position is out of bounds");
         } else if (facingDirection != 'N' && facingDirection != 'S' && facingDirection != 'E' && facingDirection != 'W') {
             throw new IllegalArgumentException("Facing direction is not valid");
+        } else if (map.get(positionX).get(positionY).equals("X")){
+            throw new IllegalArgumentException("Obstacle detected. Rover cannot be dropped here.");
         }
-//        else if there is an obstacle where rover is being dropped.
 
         this.currentMap = map;
         this.positionX = positionX;

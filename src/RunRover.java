@@ -14,7 +14,7 @@ public class RunRover {
         Planet mars = planetFactory.getAreaMap("mars");
         List<List<String>> map = mars.getAreaMap();
 
-        rover.landRover(map, 1, 1, 'N');
+        rover.landRover(map, 2, 1, 'N');
 
         System.out.println("Rover has landed on Mars at position " + rover.getPosition() +
                 ". \n");
