@@ -8,6 +8,10 @@ public class Rover {
     private List<List<String>> currentMap;
 
 
+    //constructor Rover(RoverEngine re){
+
+//}
+
     public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
         if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
             throw new IllegalArgumentException("Rover position is out of bounds");
@@ -143,6 +147,8 @@ public class Rover {
 
     void moveRover(List<String> arrayOfCommands) {
         for (String command : arrayOfCommands) {
+
+            //roverEngine.run(command)
             if ("L".equalsIgnoreCase (command)) {
                 changeRoverFacingDirectionToLeft();
             } else if ("R".equalsIgnoreCase(command)) {

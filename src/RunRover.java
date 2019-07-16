@@ -33,6 +33,14 @@ public class RunRover {
         while (!commandProcessor.processCommands(userInputString));
 
         rover.moveRover(commandProcessor.splitUserInputString(userInputString));
+
+
+
+        // accept user commands
+        // List<Enum> commands = processCommands(userInput)
+        // rover = new Rover(new RoverEngine())
+        // rover.landRover(map, 1, 1, 'N')
+        // rover.runRover(commands)
     }
 
 }
