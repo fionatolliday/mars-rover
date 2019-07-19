@@ -16,7 +16,7 @@ public class Rover {
     }
 
     public void landRover(List<List<String>> map, int positionX, int positionY,
-                        Direction facingDirection) {
+                          Direction facingDirection) {
         if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
             throw new IllegalArgumentException("Rover position is out of bounds");
 
@@ -45,24 +45,25 @@ public class Rover {
     }
 
 
-
     public void moveRover(List<Command> commands) {
 
         List<String> roversJourney = new ArrayList<>();
+        String currentPosition = "";
 
-        for (Command command : commands){
-            roverEngine.run(command, currentMap, positionX, positionY, facingDirection);
+        for (Command command : commands) {
+            RoverPosition commandPosition = roverEngine.run(command, currentMap, positionX,
+                    positionY,
+                    facingDirection);
 
-            String position = "";
-            position += positionX + ",";
-            position += positionY + ",";
-            position += facingDirection;
+            currentPosition += commandPosition.getPositionX() + ",";
+            currentPosition += commandPosition.getPositionY() + ",";
+            currentPosition += commandPosition.getFacingDirection();
 
-            roversJourney.add(position);
-            }
-
-        System.out.println("Rover travelled through " + "coordinates  " + roversJourney + ".");
+            roversJourney.add(currentPosition);
         }
+
+        System.out.println("Rover travelled through coordinates   " + roversJourney + ".");
+    }
 
 }
 

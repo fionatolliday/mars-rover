@@ -2,94 +2,115 @@ import java.util.List;
 
 public class RoverEngine {
 
-    private Direction changeRoverFacingDirectionToLeft(Direction currentFacingDirection) {
-        switch (currentFacingDirection) {
+    private RoverPosition changeRoverFacingDirectionToLeft(RoverPosition oldRoverPosition) {
+        switch (oldRoverPosition.getFacingDirection()) {
             case NORTH:
-                return Direction.WEST;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.WEST);
 
             case EAST:
-                return Direction.NORTH;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.NORTH);
 
             case SOUTH:
-                return Direction.EAST;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.EAST);
 
             case WEST:
-                return Direction.SOUTH;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.SOUTH);
+
+            default:
+                throw new IllegalArgumentException("Invalid facing direction");
         }
-        return currentFacingDirection;
     }
 
-    private Direction changeRoverFacingDirectionToRight(Direction currentFacingDirection) {
-        switch (currentFacingDirection) {
+    private RoverPosition changeRoverFacingDirectionToRight(RoverPosition oldRoverPosition) {
+        switch (oldRoverPosition.getFacingDirection()) {
             case NORTH:
-                return Direction.EAST;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.EAST);
 
             case EAST:
-                return Direction.SOUTH;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.SOUTH);
 
             case SOUTH:
-                return Direction.WEST;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.WEST);
 
             case WEST:
-                return Direction.NORTH;
+                return new RoverPosition(oldRoverPosition.getPositionX(),
+                        oldRoverPosition.getPositionY(), Direction.NORTH);
+
+            default:
+                throw new IllegalArgumentException("Invalid facing direction");
         }
-        return currentFacingDirection;
+
     }
 
 
-    private int moveRoverBackward(Direction currentFacingDirection, int positionX, int positionY
+    private RoverPosition moveRoverBackward(RoverPosition oldRoverPosition
             , List<List<String>> map) {
+        int newPositionX = oldRoverPosition.getPositionX();
+        int newPositionY = oldRoverPosition.getPositionY();
 
-        switch (currentFacingDirection) {
+
+        switch (oldRoverPosition.getFacingDirection()) {
             case NORTH:
-                positionX += 1;
-                positionX = getNextPosition(map, positionX);
-                return positionX;
+                newPositionX = oldRoverPosition.getPositionY() + 1;
+                newPositionX = getNextPosition(map, newPositionX);
+                break;
 
             case SOUTH:
-                positionX -= 1;
-                positionX = getNextPosition(map, positionX);
-                return positionX;
+                newPositionX -= 1;
+                newPositionX = getNextPosition(map, newPositionX);
+                break;
 
             case EAST:
-                positionY -= 1;
-                positionY = getNextPosition(map, positionY);
-                return positionY;
+                newPositionY -= 1;
+                newPositionY = getNextPosition(map, newPositionY);
+                break;
 
             case WEST:
-                positionY += 1;
-                positionY = getNextPosition(map, positionY);
-                return positionY;
+                newPositionY += 1;
+                newPositionY = getNextPosition(map, newPositionY);
+                break;
+
         }
-        throw new IllegalArgumentException("Facing Direction invalid");
+        return new RoverPosition(newPositionX, newPositionY, oldRoverPosition.getFacingDirection());
     }
 
-    private int moveRoverForward(Direction currentFacingDirection, int positionX, int positionY,
-                                 List<List<String>> map) {
+    private RoverPosition moveRoverForward(RoverPosition oldRoverPosition,
+                                           List<List<String>> map) {
 
-        switch (currentFacingDirection) {
+        int newPositionX = oldRoverPosition.getPositionX();
+        int newPositionY = oldRoverPosition.getPositionY();
+
+        switch (oldRoverPosition.getFacingDirection()) {
             case NORTH:
-                positionX -= 1;
-                positionX = getNextPosition(map, positionX);
-                return positionX;
+                newPositionX -= 1;
+                newPositionX = getNextPosition(map, newPositionX);
+                break;
 
             case SOUTH:
-                positionX += 1;
-                positionX = getNextPosition(map, positionX);
-                return positionX;
+                newPositionX += 1;
+                newPositionX = getNextPosition(map, newPositionX);
+                break;
 
             case EAST:
-                positionY += 1;
-                positionY = getNextPosition(map, positionY);
-                return positionY;
+                newPositionY += 1;
+                newPositionY = getNextPosition(map, newPositionY);
+                break;
 
             case WEST:
-                positionY -= 1;
-                positionY = getNextPosition(map, positionY);
-                return positionY;
+                newPositionY -= 1;
+                newPositionY = getNextPosition(map, newPositionY);
+                break;
         }
-        throw new IllegalArgumentException("Facing Direction invalid");
+        return new RoverPosition(newPositionX, newPositionY, oldRoverPosition.getFacingDirection());
     }
+
 
     private int getNextPosition(List<List<String>> map, int position) {
         int lowestBoundary = 0;
@@ -114,26 +135,25 @@ public class RoverEngine {
 // CREATE A NEW ROVERPOSITION AND RETURN IT TO ROVER
 
 //        run should take current position, get new position. if obstacle in way, throw exception.
+        RoverPosition oldRoverPosition = new RoverPosition(positionX, positionY, facingDirection);
 
-        if (!isThereAnObstacle(map, positionX, positionY)) {
-            switch (command) {
-                case LEFT:
-                    changeRoverFacingDirectionToLeft(facingDirection);
-                    return new RoverPosition(positionX, positionY, facingDirection);
 
-                case RIGHT:
-                    changeRoverFacingDirectionToRight(facingDirection);
-                    return new RoverPosition(positionX, positionY, facingDirection);
+        switch (command) {
+            case LEFT:
+                return changeRoverFacingDirectionToLeft(oldRoverPosition);
 
-                case BACKWARDS:
-                    moveRoverBackward(facingDirection, positionX, positionY, map);
-                    return new RoverPosition(positionX, positionY, facingDirection);
+            case RIGHT:
+                return changeRoverFacingDirectionToRight(oldRoverPosition);
 
-                case FORWARDS:
-                    moveRoverForward(facingDirection, positionX, positionY, map);
-                    return new RoverPosition(positionX, positionY, facingDirection);
-            }
-            return new RoverPosition(positionX, positionY, facingDirection);
-        } else throw new IllegalArgumentException("Rover can no longer move. Obstacle ahead.");
+            case BACKWARDS:
+                return moveRoverBackward(oldRoverPosition,map);
+
+            case FORWARDS:
+                return moveRoverForward(oldRoverPosition, map);
+
+            default:
+                throw new IllegalArgumentException("Invalid command");
+        }
+
     }
 }
