@@ -1,4 +1,4 @@
-public enum Commands {
+public enum Command {
 
     LEFT, RIGHT, BACKWARDS, FORWARDS
 }

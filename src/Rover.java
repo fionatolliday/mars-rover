@@ -1,23 +1,29 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rover {
 
     private int positionX;
     private int positionY;
-    private char facingDirection;
+    private Direction facingDirection;
     private List<List<String>> currentMap;
+    private RoverEngine roverEngine;
 
 
-    //constructor Rover(RoverEngine re){
+    public Rover(RoverEngine roverEngine) {
+        this.roverEngine = roverEngine;
 
-//}
+    }
 
-    public void landRover(List<List<String>> map, int positionX, int positionY, char facingDirection) {
+    public void landRover(List<List<String>> map, int positionX, int positionY,
+                        Direction facingDirection) {
         if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
             throw new IllegalArgumentException("Rover position is out of bounds");
-        } else if (facingDirection != 'N' && facingDirection != 'S' && facingDirection != 'E' && facingDirection != 'W') {
+
+        } else if (facingDirection != Direction.NORTH && facingDirection != Direction.SOUTH && facingDirection != Direction.EAST && facingDirection != Direction.WEST) {
             throw new IllegalArgumentException("Facing direction is not valid");
-        } else if (map.get(positionX).get(positionY).equals("X")){
+
+        } else if (map.get(positionX).get(positionY).equals("X")) {
             throw new IllegalArgumentException("Obstacle detected. Rover cannot be dropped here.");
         }
 
@@ -25,6 +31,9 @@ public class Rover {
         this.positionX = positionX;
         this.positionY = positionY;
         this.facingDirection = facingDirection;
+
+        System.out.println("Rover has landed on Mars at position " + getPosition() +
+                ". \n");
     }
 
     public String getPosition() {
@@ -35,139 +44,28 @@ public class Rover {
         return position;
     }
 
-    private void changeRoverFacingDirectionToLeft() {
-        switch (facingDirection) {
-            case 'N':
-                facingDirection = 'W';
-                break;
-
-            case 'E':
-                facingDirection = 'N';
-                break;
-
-            case 'S':
-                facingDirection = 'E';
-                break;
-
-            case 'W':
-                facingDirection = 'S';
-                break;
-        }
-    }
-
-    private void changeRoverFacingDirectionToRight() {
-        switch (facingDirection) {
-            case 'N':
-                facingDirection = 'E';
-                break;
-
-            case 'E':
-                facingDirection = 'S';
-                break;
-
-            case 'S':
-                facingDirection = 'W';
-                break;
-
-            case 'W':
-                facingDirection = 'N';
-                break;
-        }
-    }
 
 
-    private void moveRoverBackward() {
-        switch (facingDirection) {
-            case 'N':
-                positionX += 1;
-                positionX = getNextPosition(positionX);
-                break;
+    public void moveRover(List<Command> commands) {
 
-            case 'S':
-                positionX -= 1;
-                positionX = getNextPosition(positionX);
-                break;
+        List<String> roversJourney = new ArrayList<>();
 
-            case 'E':
-                positionY -= 1;
-                positionY = getNextPosition(positionY);
-                break;
+        for (Command command : commands){
+            roverEngine.run(command, currentMap, positionX, positionY, facingDirection);
 
-            case 'W':
-                positionY += 1;
-                positionY = getNextPosition(positionY);
-                break;
-        }
+            String position = "";
+            position += positionX + ",";
+            position += positionY + ",";
+            position += facingDirection;
 
-    }
-
-    private void moveRoverForward() {
-
-        switch (facingDirection) {
-            case 'N':
-                positionX -= 1;
-                positionX = getNextPosition(positionX);
-                break;
-
-            case 'S':
-                positionX += 1;
-                positionX = getNextPosition(positionX);
-                break;
-
-            case 'E':
-                positionY += 1;
-                positionY = getNextPosition(positionY);
-                break;
-
-            case 'W':
-                positionY -= 1;
-                positionY = getNextPosition(positionY);
-                break;
-        }
-
-    }
-
-    private int getNextPosition(int position) {
-        int lowestBoundary = 0;
-        int highestBoundary = currentMap.size() - 1;
-
-        if (position > highestBoundary) {
-            return lowestBoundary;
-        } else if (position < lowestBoundary) {
-            return highestBoundary;
-        }
-
-        return position;
-    }
-
-
-    private boolean isThereAnObstacle(int positionX, int positionY) {
-        return currentMap.get(positionX).get(positionY).equals("X");
-    }
-
-    void moveRover(List<String> arrayOfCommands) {
-        for (String command : arrayOfCommands) {
-
-            //roverEngine.run(command)
-            if ("L".equalsIgnoreCase (command)) {
-                changeRoverFacingDirectionToLeft();
-            } else if ("R".equalsIgnoreCase(command)) {
-                changeRoverFacingDirectionToRight();
-            } else if ("B".equalsIgnoreCase(command)) {
-                moveRoverBackward();
-            } else if ("F".equalsIgnoreCase(command)) {
-                moveRoverForward();
+            roversJourney.add(position);
             }
-            if (isThereAnObstacle(positionX, positionY)) {
-                System.out.println("Can no longer move. Obstacle " +
-                        "detected at position " + positionX + "," + positionY + ".");
-                break;
-            }
-            System.out.println("For Command: " + command + "," + "Rover travelled through " +
-                    "coordinates  " + getPosition() +
-                    ".");
-        }
-    }
 
+        System.out.println("Rover travelled through " + "coordinates  " + roversJourney + ".");
+        }
 
 }
+
+//            if (isThereAnObstacle(positionX, positionY)) {
+//                System.out.println("Can no longer move. Obstacle " +
+//                        "detected at position " + positionX + "," + positionY + ".");

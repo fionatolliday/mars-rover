@@ -38,7 +38,7 @@ Needs: `Java` installed & `intelliJ` (SDK11)
 The four commands that Rover requires to move are L (left), R (right), F (forward), B (backward).
 If the list of commands includes even one invalid command, the system will loop and ask the user to
 input their commands.
-Commands can be inputted in lowercase or uppercase.
+Command can be inputted in lowercase or uppercase.
 Once the list of commands have been implemented by the program, the program will automatically print
 the rover journey before exiting.
 
