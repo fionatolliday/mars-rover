@@ -40,11 +40,6 @@ public class Rover {
 
         for (Command command : commands) {
 
-            // figure out next position
-            // check if obstacle there
-            // if there is, stop
-            // if not, continue (move, update new position)
-
             RoverPosition commandPosition = roverEngine.run(command, currentMap, roverPosition.getPositionX(),
                     roverPosition.getPositionY(), roverPosition.getFacingDirection());
 
