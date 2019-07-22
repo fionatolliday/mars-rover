@@ -50,15 +50,15 @@ public class RoverEngine {
     }
 
 
-    private RoverPosition moveRoverBackward(RoverPosition oldRoverPosition
+    private RoverPosition moveRoverBackward(RoverPosition currentRoverPosition
             , List<List<String>> map) {
-        int newPositionX = oldRoverPosition.getPositionX();
-        int newPositionY = oldRoverPosition.getPositionY();
+        int newPositionX = currentRoverPosition.getPositionX();
+        int newPositionY = currentRoverPosition.getPositionY();
 
 
-        switch (oldRoverPosition.getFacingDirection()) {
+        switch (currentRoverPosition.getFacingDirection()) {
             case NORTH:
-                newPositionX = oldRoverPosition.getPositionY() + 1;
+                newPositionX += 1;
                 newPositionX = getNextPosition(map, newPositionX);
                 break;
 
@@ -78,7 +78,7 @@ public class RoverEngine {
                 break;
 
         }
-        return new RoverPosition(newPositionX, newPositionY, oldRoverPosition.getFacingDirection());
+        return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
     }
 
     private RoverPosition moveRoverForward(RoverPosition oldRoverPosition,
@@ -125,18 +125,15 @@ public class RoverEngine {
     }
 
 
-    private boolean isThereAnObstacle(List<List<String>> map, int positionX, int positionY) {
+    public boolean isThereAnObstacle(List<List<String>> map, int positionX, int positionY) {
         return map.get(positionX).get(positionY).equals("X");
     }
 
 
     public RoverPosition run(Command command, List<List<String>> map, int positionX, int positionY,
                              Direction facingDirection) {
-// CREATE A NEW ROVERPOSITION AND RETURN IT TO ROVER
 
-//        run should take current position, get new position. if obstacle in way, throw exception.
         RoverPosition oldRoverPosition = new RoverPosition(positionX, positionY, facingDirection);
-
 
         switch (command) {
             case LEFT:
@@ -146,7 +143,7 @@ public class RoverEngine {
                 return changeRoverFacingDirectionToRight(oldRoverPosition);
 
             case BACKWARDS:
-                return moveRoverBackward(oldRoverPosition,map);
+                return moveRoverBackward(oldRoverPosition, map);
 
             case FORWARDS:
                 return moveRoverForward(oldRoverPosition, map);

@@ -15,7 +15,7 @@ class CommandProcessor {
             try{
                 Command command = convert(commandString);
                 commands.add(command);
-            }catch(IllegalArgumentException e){
+            } catch(IllegalArgumentException e){
                 return new ArrayList<>();
             }
 

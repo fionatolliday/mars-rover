@@ -16,7 +16,7 @@ public class RoverEngineTest {
 
         List<String> row1 = Arrays.asList(" ", " ", "X");
         List<String> row2 = Arrays.asList(" ", " ", " ");
-        List<String> row3 = Arrays.asList(" ", "X", " ");
+        List<String> row3 = Arrays.asList(" ", " ", " ");
 
         map.add(row1);
         map.add(row2);
@@ -29,226 +29,280 @@ public class RoverEngineTest {
         RoverEngine roverEngine = new RoverEngine();
 
         Command command = Command.LEFT;
-        int positionX = 1;
+        int positionX = 0;
         int positionY = 1;
         Direction facing = Direction.NORTH;
 
         roverEngine.run(command, map, positionX, positionY, facing);
 
-        RoverPosition actualPosition = roverEngine.run(command, map, positionX, positionY, facing);
-        String expectedPosition = "1,1,WEST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY,
+                facing).toString();
+        String expectedPosition = "0,1,WEST";
 
         Assert.assertEquals(expectedPosition, actualPosition);
     }
 
-//    @Test
-//    public void whenCommandIsLeftAndFacingWest_RoverTurnsLeftChangingFacingDirectionToSouth() {
-//        RoverEngine roverEngine = new RoverEngine();
-//
-//        Command command = Command.LEFT;
-//        int positionX = 1;
-//        int positionY = 1;
-//        Direction facing = Direction.WEST;
-//
-//        roverEngine.run(command, map, positionX, positionY, facing);
-//
-//        RoverPosition actualPosition = roverEngine.run(command, map, positionX, positionY, facing);
-//        String expectedPosition = "1,1,SOUTH";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//
-//    }
+    @Test
+    public void whenCommandIsLeftAndFacingWest_RoverTurnsLeftChangingFacingDirectionToSouth() {
+        RoverEngine roverEngine = new RoverEngine();
 
-//    @Test
-//    public void whenCommandIsLeftAndFacingSouth_RoverTurnsLeftChangingFacingDirectionToEast() {
-//        RoverEngine roverEngine = new RoverEngine();
-//
-//        Command command = Command.LEFT;
-//        int positionX = 1;
-//        int positionY = 1;
-//        Direction facing = Direction.SOUTH;
-//
-//        roverEngine.run(command, map, positionX, positionY, facing);
-//
-//        RoverPosition actualPosition = roverEngine.run(command, map, positionX, positionY, facing);
-//        String expectedPosition = "1,1,EAST";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//    @Test
-//    public void whenCommandIsLAndFacingEast_RoverTurnsLeftChangingFacingDirectionToNorth() {
-//
-//        List<String> commands = Arrays.asList("L");
-//
-//        rover.landRover(map, 0, 1, 'E');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,1,N";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//
-//    @Test
-//    public void whenCommandIsRAndFacingNorth_RoverTurnsRightChangingFacingDirectionToEast() {
-//        List<List<String>> map = new ArrayList<>();
-//        List<String> row1 = Arrays.asList(" ", " ", " ");
-//        map.add(row1);
-//
-//        List<String> commands = Arrays.asList("R");
-//
-//        rover.landRover(map, 0, 0, 'N');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,0,E";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsRAndFacingEast_RoverTurnsRightChangingFacingDirectionToSouth() {
-//
-//        List<String> commands = Arrays.asList("R");
-//
-//        rover.landRover(map, 0, 0, 'E');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,0,S";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsRAndFacingSouth_RoverTurnsRightChangingFacingDirectionToWest() {
-//
-//        List<String> commands = Arrays.asList("R");
-//
-//        rover.landRover(map, 0, 0, 'S');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,0,W";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsRAndFacingWest_RoverTurnsRightChangingFacingDirectionToNorth() {
-//
-//        List<String> commands = Arrays.asList("R");
-//
-//        rover.landRover(map, 0, 0, 'W');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,0,N";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//
-//    @Test
-//    public void whenCommandIsBAndFacingNorth_RoverMovesBackwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("B");
-//
-//        rover.landRover(map, 2, 1, 'N');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,1,N";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsBAndFacingSouth_RoverMovesBackwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("B");
-//
-//        rover.landRover(map, 0, 1, 'S');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "2,1,S";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsBAndFacingEast_RoverMovesBackwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("B");
-//
-//        rover.landRover(map, 1, 1, 'E');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "1,0,E";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsBAndFacingWest_RoverMovesBackwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("B");
-//
-//        rover.landRover(map, 0, 1, 'W');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,2,W";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsFAndFacingNorth_RoverMovesForwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("F");
-//
-//        rover.landRover(map, 0, 1, 'N');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "1,1,N";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsFAndFacingSouth_RoverMovesForwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("F");
-//
-//        rover.landRover(map, 1, 1, 'S');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "2,1,S";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsBAndFacingEast_RoverMovesForwardOneSpot() {
-//
-//        List<String> commands = Arrays.asList("F");
-//
-//        rover.landRover(map, 1, 1, 'E');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "1,2,E";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
-//
-//    @Test
-//    public void whenCommandIsBAndFacingWest_RoverMovesForwardOneSpot() {
-//        List<String> commands = Arrays.asList("F");
-//
-//        rover.landRover(map, 0, 1, 'W');
-//        rover.moveRover(commands);
-//        String actualPosition = rover.getPosition();
-//        String expectedPosition = "0,0,W";
-//
-//        Assert.assertEquals(expectedPosition, actualPosition);
-//    }
+        Command command = Command.LEFT;
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.WEST;
+
+        roverEngine.run(command, map, positionX, positionY, facing);
+
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+        String expectedPosition = "1,1,SOUTH";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+
+    }
+
+    @Test
+    public void whenCommandIsLeftAndFacingSouth_RoverTurnsLeftChangingFacingDirectionToEast() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.LEFT;
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.SOUTH;
+
+        roverEngine.run(command, map, positionX, positionY, facing);
+
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+        String expectedPosition = "1,1,EAST";
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
 
 
+    @Test
+    public void whenCommandIsLeftAndFacingEast_RoverTurnsLeftChangingFacingDirectionToNorth() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.LEFT;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.EAST;
+
+        String expectedPosition = "1,1,NORTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsRightAndFacingNorth_RoverTurnsRightChangingFacingDirectionToEast() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.RIGHT;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.NORTH;
+
+        String expectedPosition = "1,1,EAST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsRightAndFacingEast_RoverTurnsRightChangingFacingDirectionToSouth() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.RIGHT;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.EAST;
+
+        String expectedPosition = "1,1,SOUTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsRightAndFacingSouth_RoverTurnsRightChangingFacingDirectionToWest() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.RIGHT;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.SOUTH;
+
+        String expectedPosition = "1,1,WEST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsRightAndFacingWest_RoverTurnsRightChangingFacingDirectionToNorth() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.RIGHT;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.WEST;
+
+        String expectedPosition = "1,1,NORTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);    }
 
 
+    @Test
+    public void whenCommandIsBackwardsAndFacingNorth_RoverMovesBackwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.BACKWARDS;
+
+        int positionX = 2;
+        int positionY = 1;
+        Direction facing = Direction.NORTH;
+
+        String expectedPosition = "0,1,NORTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsBackwardsAndFacingSouth_RoverMovesBackwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.BACKWARDS;
+
+        int positionX = 0;
+        int positionY = 1;
+        Direction facing = Direction.SOUTH;
+
+        String expectedPosition = "2,1,SOUTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);    }
+
+    @Test
+    public void whenCommandIsBackwardsAndFacingEast_RoverMovesBackwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.BACKWARDS;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.EAST;
+
+        String expectedPosition = "1,0,EAST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);    }
+
+    @Test
+    public void whenCommandIsBackwardsAndFacingWest_RoverMovesBackwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.BACKWARDS;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.WEST;
+
+        String expectedPosition = "1,2,WEST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);    }
+
+    @Test
+    public void whenCommandIsForwardsAndFacingNorth_RoverMovesForwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.FORWARDS;
+
+        int positionX = 0;
+        int positionY = 1;
+        Direction facing = Direction.NORTH;
+
+        String expectedPosition = "2,1,NORTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsForwardsAndFacingSouth_RoverMovesForwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.FORWARDS;
+
+        int positionX = 2;
+        int positionY = 1;
+        Direction facing = Direction.SOUTH;
+
+        String expectedPosition = "0,1,SOUTH";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsForwardsAndFacingEast_RoverMovesForwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.FORWARDS;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.EAST;
+
+        String expectedPosition = "1,2,EAST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+    @Test
+    public void whenCommandIsForwardsAndFacingWest_RoverMovesForwardOneSpot() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        Command command = Command.FORWARDS;
+
+        int positionX = 1;
+        int positionY = 1;
+        Direction facing = Direction.WEST;
+
+        String expectedPosition = "1,0,WEST";
+        String actualPosition = roverEngine.run(command, map, positionX, positionY, facing).toString();
+
+        Assert.assertEquals(expectedPosition, actualPosition);
+    }
+
+
+    @Test
+    public void whenThereIsAnObstacleAtPosition_ShouldReturnTrue() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        int positionX = 0;
+        int positionY = 2;
+
+        Assert.assertTrue(roverEngine.isThereAnObstacle(map, positionX, positionY));
+
+    }
+
+    @Test
+    public void whenThereIsNoObstacleAtPosition_ShouldReturnFalse() {
+        RoverEngine roverEngine = new RoverEngine();
+
+        int positionX = 0;
+        int positionY = 1;
+
+        Assert.assertFalse(roverEngine.isThereAnObstacle(map, positionX, positionY));
+
+    }
 }

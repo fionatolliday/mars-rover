@@ -3,63 +3,58 @@ import java.util.List;
 
 public class Rover {
 
-    private int positionX;
-    private int positionY;
-    private Direction facingDirection;
     private List<List<String>> currentMap;
     private RoverEngine roverEngine;
+    private RoverPosition roverPosition;
 
 
     public Rover(RoverEngine roverEngine) {
         this.roverEngine = roverEngine;
-
     }
 
-    public void landRover(List<List<String>> map, int positionX, int positionY,
-                          Direction facingDirection) {
-        if (positionX > map.size() - 1 || map.get(0).size() - 1 < positionY) {
+
+    public RoverPosition landRover(List<List<String>> map, RoverPosition landingPosition) {
+        this.currentMap = map;
+        this.roverPosition = landingPosition;
+        return landingPosition;
+    }
+
+
+    public void exceptionsForLandingRover(List<List<String>> map, RoverPosition landingPosition) {
+
+        if (landingPosition.getPositionX() > map.size() - 1 || map.get(0).size() - 1 < landingPosition.getPositionY()) {
             throw new IllegalArgumentException("Rover position is out of bounds");
 
-        } else if (facingDirection != Direction.NORTH && facingDirection != Direction.SOUTH && facingDirection != Direction.EAST && facingDirection != Direction.WEST) {
+        } else if (landingPosition.getFacingDirection() != Direction.NORTH && landingPosition.getFacingDirection() != Direction.SOUTH && landingPosition.getFacingDirection() != Direction.EAST && landingPosition.getFacingDirection() != Direction.WEST) {
             throw new IllegalArgumentException("Facing direction is not valid");
 
-        } else if (map.get(positionX).get(positionY).equals("X")) {
+        } else if (map.get(landingPosition.getPositionX()).get(landingPosition.getPositionY()).equals("X")) {
             throw new IllegalArgumentException("Obstacle detected. Rover cannot be dropped here.");
         }
-
-        this.currentMap = map;
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.facingDirection = facingDirection;
-
-        System.out.println("Rover has landed on Mars at position " + getPosition() +
-                ". \n");
-    }
-
-    public String getPosition() {
-        String position = "";
-        position += positionX + ",";
-        position += positionY + ",";
-        position += facingDirection;
-        return position;
     }
 
 
     public void moveRover(List<Command> commands) {
 
         List<String> roversJourney = new ArrayList<>();
-        String currentPosition = "";
 
         for (Command command : commands) {
-            RoverPosition commandPosition = roverEngine.run(command, currentMap, positionX,
-                    positionY,
-                    facingDirection);
 
-            currentPosition += commandPosition.getPositionX() + ",";
-            currentPosition += commandPosition.getPositionY() + ",";
-            currentPosition += commandPosition.getFacingDirection();
+            // figure out next position
+            // check if obstacle there
+            // if there is, stop
+            // if not, continue (move, update new position)
 
-            roversJourney.add(currentPosition);
+            RoverPosition commandPosition = roverEngine.run(command, currentMap, roverPosition.getPositionX(),
+                    roverPosition.getPositionY(), roverPosition.getFacingDirection());
+
+            if (!roverEngine.isThereAnObstacle(currentMap, commandPosition.getPositionX(),
+                    commandPosition.getPositionY())) {
+
+                roversJourney.add(commandPosition.toString());
+
+            } else System.out.println("Can no longer move. Obstacle " +
+                    "detected at position " + roverPosition.getPositionX() + "," + roverPosition.getPositionY() + "," + roverPosition.getFacingDirection() + ".");
         }
 
         System.out.println("Rover travelled through coordinates   " + roversJourney + ".");
@@ -67,6 +62,3 @@ public class Rover {
 
 }
 
-//            if (isThereAnObstacle(positionX, positionY)) {
-//                System.out.println("Can no longer move. Obstacle " +
-//                        "detected at position " + positionX + "," + positionY + ".");

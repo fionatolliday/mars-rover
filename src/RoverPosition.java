@@ -17,10 +17,17 @@ public class RoverPosition {
     }
 
 
-
-    public RoverPosition(int positionX, int positionY, Direction facingDirection){
+    public RoverPosition(int positionX, int positionY, Direction facingDirection) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.facingDirection = facingDirection;
     }
+
+    @Override
+    public String toString() {
+        return positionX + "," +
+                positionY + "," +
+                facingDirection.toString();
+    }
+
 }

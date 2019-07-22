@@ -10,8 +10,20 @@ public class RunRover {
         CommandProcessor commandProcessor = new CommandProcessor();
         PlanetFactory planetFactory = new PlanetFactory();
         Planet mars = planetFactory.getAreaMap("mars");
+        RoverPosition landingPosition = new RoverPosition(1,1,Direction.NORTH);
 
-        rover.landRover(mars.getAreaMap(), 1, 1, Direction.NORTH);
+
+        try{
+            rover.landRover(mars.getAreaMap(), landingPosition);
+        }
+        catch(Exception e)
+        {
+            rover.exceptionsForLandingRover(mars.getAreaMap(), landingPosition);
+            return;
+        }
+
+        System.out.println("Rover has landed on Mars at position " + landingPosition +
+                ". \n");
 
         boolean validInput = true;
         List<Command> userCommands;
@@ -26,14 +38,6 @@ public class RunRover {
         } while(validInput);
 
         rover.moveRover(userCommands);
-//        System.out.println(getPosition());
-
-        // accept user commands
-        // List<Enum> commands = processInput(userInput)
-        // rover = new Rover(new RoverEngine())
-        // rover.landRover(map, 1, 1, 'N')
-        // rover.runRover(commands)
-
     }
 
     private static String getUserInput() {
