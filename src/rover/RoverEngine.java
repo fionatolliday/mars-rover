@@ -1,8 +1,6 @@
 package rover;
-
 import enums.Command;
 import enums.Direction;
-
 import java.util.List;
 
 public class RoverEngine {
