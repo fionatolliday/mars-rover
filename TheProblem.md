@@ -1,4 +1,4 @@
-## The Mars Rover problem
+## The planet.Mars rover.Rover problem
 Develop an api that moves a rover around on a grid.
 
 You are given the initial starting point (x,y) of a rover and the direction (N,S,E,W) it is facing.

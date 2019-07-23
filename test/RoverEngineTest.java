@@ -1,6 +1,9 @@
+import enums.Command;
+import enums.Direction;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import rover.RoverEngine;
 
 import java.util.ArrayList;
 import java.util.Arrays;

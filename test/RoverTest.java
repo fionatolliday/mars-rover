@@ -1,6 +1,10 @@
+import enums.Direction;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import rover.Rover;
+import rover.RoverEngine;
+import rover.RoverPosition;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,24 +40,6 @@ public class RoverTest {
         Assert.assertEquals(expectedPosition, landingActual);
     }
 
-
-    @Test(expected = IllegalArgumentException.class)
-    public void whenRoverIsLandedOutOfBounds_ItShouldThrowAnIllegalArgumentException() {
-
-        Rover rover = new Rover(roverEngine);
-        RoverPosition landingPosition = new RoverPosition(1, 4, Direction.NORTH);
-
-        rover.landRover(map, landingPosition);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void whenRoverIsLandedOnAnObstacle_ItShouldThrowAnIllegalArgumentException() {
-
-        Rover rover = new Rover(roverEngine);
-        RoverPosition landingPosition = new RoverPosition(1, 1, Direction.NORTH);
-
-        rover.landRover(map, landingPosition);
-    }
 
 
 }

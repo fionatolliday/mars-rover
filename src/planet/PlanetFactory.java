@@ -1,3 +1,7 @@
+package planet;
+
+import Interface.Planet;
+
 public class PlanetFactory {
 
     public Planet getAreaMap (String planetName){

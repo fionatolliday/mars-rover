@@ -1,3 +1,5 @@
+import commands.CommandProcessor;
+import enums.Command;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;

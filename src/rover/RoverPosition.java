@@ -1,3 +1,7 @@
+package rover;
+
+import enums.Direction;
+
 public class RoverPosition {
 
     private int positionX;
