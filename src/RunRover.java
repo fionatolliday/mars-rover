@@ -39,7 +39,7 @@ public class RunRover {
 
     private static String getUserInput() {
         Scanner inputScanner = new Scanner(System.in);
-        System.out.println("rover.Rover can turn left (L) and right(R) as well as move forward (F), " +
+        System.out.println("Rover can turn left (L) and right(R) as well as move forward (F), " +
                 "backwards (B).  \n Please enter your commands.  " +
                 "\n" +
                 "As " +

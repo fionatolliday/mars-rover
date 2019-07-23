@@ -58,7 +58,7 @@ public class Rover {
                     "detected at position " + nextPosition.getPositionX() + "," + nextPosition.getPositionY() + "," + nextPosition.getFacingDirection() + ".");
         }
 
-        System.out.println("rover.Rover travelled through coordinates   " + roversJourney + ".");
+        System.out.println("Rover travelled through coordinates   " + roversJourney + ".");
     }
 
 }
