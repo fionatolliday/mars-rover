@@ -1,5 +1,5 @@
-# planet.Mars rover.Rover
-The planet.Mars rover.Rover kata problem can be viewed [here](https://github.com/MYOB-Technology/General_Developer/blob/master/katas/kata-mars-rover/kata-mars-rover.md)
+# Rover
+The Rover kata problem can be viewed [here](https://github.com/MYOB-Technology/General_Developer/blob/master/katas/kata-mars-rover/kata-mars-rover.md)
 
 # Run project
 
