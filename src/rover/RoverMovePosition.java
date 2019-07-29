@@ -1,15 +1,15 @@
 package rover;
 
 import enums.Command;
+import enums.Direction;
 
 import java.util.List;
 
 public class RoverMovePosition {
 
     public RoverPosition moveRoverPosition(Command movement,
-                                                      RoverPosition currentRoverPosition, List<List<String>> planetMap)
-    {
-        switch (movement){
+                                           RoverPosition currentRoverPosition, List<List<String>> planetMap) {
+        switch (movement) {
             case FORWARDS:
                 return moveRoverForward(currentRoverPosition, planetMap);
 
@@ -27,22 +27,29 @@ public class RoverMovePosition {
 
         int newPositionX = currentRoverPosition.getPositionX();
         int newPositionY = currentRoverPosition.getPositionY();
+        int factor;
 
         switch (currentRoverPosition.getFacingDirection()) {
             case NORTH:
-                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + 1);
-                break;
-
             case SOUTH:
-                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() - 1);
+                if (currentRoverPosition.getFacingDirection() == Direction.NORTH) {
+                    factor = 1;
+                } else {
+                    factor = -1;
+                }
+
+                newPositionX = getNextPosition(planetMap,
+                        currentRoverPosition.getPositionX() + factor);
                 break;
 
             case EAST:
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() -1);
-                break;
-
             case WEST:
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + 1);
+                if(currentRoverPosition.getFacingDirection() == Direction.EAST){
+                    factor = -1;
+                } else {
+                    factor = 1;
+                }
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + factor);
                 break;
 
         }
@@ -55,22 +62,27 @@ public class RoverMovePosition {
 
         int newPositionX = currentRoverPosition.getPositionX();
         int newPositionY = currentRoverPosition.getPositionY();
+        int factor;
 
         switch (currentRoverPosition.getFacingDirection()) {
             case NORTH:
-                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() - 1);
-                break;
-
             case SOUTH:
-                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + 1);
+                if (currentRoverPosition.getFacingDirection() == Direction.NORTH) {
+                    factor = -1;
+                } else {
+                    factor = 1;
+                }
+                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + factor);
                 break;
 
             case EAST:
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + 1);
-                break;
-
             case WEST:
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() - 1);
+                if (currentRoverPosition.getFacingDirection() == Direction.EAST){
+                    factor = 1;
+                } else {
+                    factor = -1;
+                }
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + factor);
                 break;
         }
         return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
