@@ -5,126 +5,12 @@ import java.util.List;
 
 public class RoverEngine {
 
-    private RoverPosition changeRoverFacingDirectionToLeft(RoverPosition currentRoverPosition) {
-        switch (currentRoverPosition.getFacingDirection()) {
-            case NORTH:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.WEST);
+    private RoverDirectionChanger roverDirectionChanger;
+    private RoverMovePosition roverMovePosition;
 
-            case EAST:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.NORTH);
-
-            case SOUTH:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.EAST);
-
-            case WEST:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.SOUTH);
-
-            default:
-                throw new IllegalArgumentException("Invalid facing direction");
-        }
-    }
-
-    private RoverPosition changeRoverFacingDirectionToRight(RoverPosition currentRoverPosition) {
-        switch (currentRoverPosition.getFacingDirection()) {
-            case NORTH:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.EAST);
-
-            case EAST:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.SOUTH);
-
-            case SOUTH:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.WEST);
-
-            case WEST:
-                return new RoverPosition(currentRoverPosition.getPositionX(),
-                        currentRoverPosition.getPositionY(), Direction.NORTH);
-
-            default:
-                throw new IllegalArgumentException("Invalid facing direction");
-        }
-
-    }
-
-
-    private RoverPosition moveRoverBackward(RoverPosition currentRoverPosition
-            , List<List<String>> planetMap) {
-        int newPositionX = currentRoverPosition.getPositionX();
-        int newPositionY = currentRoverPosition.getPositionY();
-
-
-        switch (currentRoverPosition.getFacingDirection()) {
-            case NORTH:
-                newPositionX += 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
-                break;
-
-            case SOUTH:
-                newPositionX -= 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
-                break;
-
-            case EAST:
-                newPositionY -= 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
-                break;
-
-            case WEST:
-                newPositionY += 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
-                break;
-
-        }
-        return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
-    }
-
-    private RoverPosition moveRoverForward(RoverPosition currentRoverPosition,
-                                           List<List<String>> planetMap) {
-
-        int newPositionX = currentRoverPosition.getPositionX();
-        int newPositionY = currentRoverPosition.getPositionY();
-
-        switch (currentRoverPosition.getFacingDirection()) {
-            case NORTH:
-                newPositionX -= 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
-                break;
-
-            case SOUTH:
-                newPositionX += 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
-                break;
-
-            case EAST:
-                newPositionY += 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
-                break;
-
-            case WEST:
-                newPositionY -= 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
-                break;
-        }
-        return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
-    }
-
-
-    private int getNextPosition(List<List<String>> planetMap, int position) {
-        int lowestBoundary = 0;
-        int highestBoundary = planetMap.size() - 1;
-
-        if (position > highestBoundary) {
-            return lowestBoundary;
-        } else if (position < lowestBoundary) {
-            return highestBoundary;
-        }
-        return position;
+    public RoverEngine(){
+        roverDirectionChanger = new RoverDirectionChanger();
+        roverMovePosition = new RoverMovePosition();
     }
 
 
@@ -140,16 +26,20 @@ public class RoverEngine {
 
         switch (command) {
             case LEFT:
-                return changeRoverFacingDirectionToLeft(currentRoverPosition);
+                return roverDirectionChanger.changeRoverFacingDirectionTo(Command.LEFT,
+                        currentRoverPosition);
 
             case RIGHT:
-                return changeRoverFacingDirectionToRight(currentRoverPosition);
+                return roverDirectionChanger.changeRoverFacingDirectionTo(Command.RIGHT,
+                        currentRoverPosition);
 
             case BACKWARDS:
-                return moveRoverBackward(currentRoverPosition, planetMap);
+                return roverMovePosition.moveRoverPosition(Command.BACKWARDS,
+                        currentRoverPosition, planetMap);
 
             case FORWARDS:
-                return moveRoverForward(currentRoverPosition, planetMap);
+                return roverMovePosition.moveRoverPosition(Command.FORWARDS,
+                        currentRoverPosition, planetMap);
 
             default:
                 throw new IllegalArgumentException("Invalid command");
