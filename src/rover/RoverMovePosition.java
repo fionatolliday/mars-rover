@@ -9,83 +9,44 @@ public class RoverMovePosition {
 
     public RoverPosition moveRoverPosition(Command movement,
                                            RoverPosition currentRoverPosition, List<List<String>> planetMap) {
-        switch (movement) {
-            case FORWARDS:
-                return moveRoverForward(currentRoverPosition, planetMap);
 
-            case BACKWARDS:
-                return moveRoverBackward(currentRoverPosition, planetMap);
+        // Which direction are you facing?
+        Direction currentFacingDirection = currentRoverPosition.getFacingDirection();
 
-            default:
-                throw new IllegalArgumentException("Unrecognized movement");
-        }
-    }
+        // Which compass direction do you want to move to?
+        Direction movementDirection;
+        if (movement == Command.FORWARDS) movementDirection = currentFacingDirection.getFront();
+        else movementDirection = currentFacingDirection.getBack();
 
-
-    private RoverPosition moveRoverBackward(RoverPosition currentRoverPosition
-            , List<List<String>> planetMap) {
-
-        int newPositionX = currentRoverPosition.getPositionX();
-        int newPositionY = currentRoverPosition.getPositionY();
+        // Use the decision table for the movement in the compass direction
+        // N: x - 1
+        // E: y + 1
+        // W: y - 1
+        // S: x + 1
         int factor;
-
-        switch (currentRoverPosition.getFacingDirection()) {
+        switch (movementDirection) {
             case NORTH:
             case SOUTH:
-                if (currentRoverPosition.getFacingDirection() == Direction.NORTH) {
-                    factor = 1;
-                } else {
-                    factor = -1;
-                }
+                if (movementDirection == Direction.NORTH) factor = -1;
+                else factor = 1;
 
-                newPositionX = getNextPosition(planetMap,
+                int newXPosition = getNextPosition(planetMap,
                         currentRoverPosition.getPositionX() + factor);
-                break;
-
+                return new RoverPosition(newXPosition, currentRoverPosition.getPositionY(),
+                        currentFacingDirection);
             case EAST:
             case WEST:
-                if(currentRoverPosition.getFacingDirection() == Direction.EAST){
-                    factor = -1;
-                } else {
-                    factor = 1;
-                }
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + factor);
-                break;
+                if (movementDirection == Direction.EAST) factor = 1;
+                else factor = -1;
 
+                int newYPosition = getNextPosition(planetMap,
+                        currentRoverPosition.getPositionY() + factor);
+
+                return new RoverPosition(currentRoverPosition.getPositionX(), newYPosition,
+                        currentFacingDirection);
+            default:
+                throw new IllegalArgumentException("Invalid direction");
         }
-        return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
-    }
-
-
-    private RoverPosition moveRoverForward(RoverPosition currentRoverPosition,
-                                           List<List<String>> planetMap) {
-
-        int newPositionX = currentRoverPosition.getPositionX();
-        int newPositionY = currentRoverPosition.getPositionY();
-        int factor;
-
-        switch (currentRoverPosition.getFacingDirection()) {
-            case NORTH:
-            case SOUTH:
-                if (currentRoverPosition.getFacingDirection() == Direction.NORTH) {
-                    factor = -1;
-                } else {
-                    factor = 1;
-                }
-                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + factor);
-                break;
-
-            case EAST:
-            case WEST:
-                if (currentRoverPosition.getFacingDirection() == Direction.EAST){
-                    factor = 1;
-                } else {
-                    factor = -1;
-                }
-                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + factor);
-                break;
-        }
-        return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
     }
 
     private int getNextPosition(List<List<String>> planetMap, int position) {
