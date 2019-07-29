@@ -22,32 +22,27 @@ public class RoverMovePosition {
     }
 
 
-
     private RoverPosition moveRoverBackward(RoverPosition currentRoverPosition
             , List<List<String>> planetMap) {
+
         int newPositionX = currentRoverPosition.getPositionX();
         int newPositionY = currentRoverPosition.getPositionY();
 
-
         switch (currentRoverPosition.getFacingDirection()) {
             case NORTH:
-                newPositionX += 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
+                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + 1);
                 break;
 
             case SOUTH:
-                newPositionX -= 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
+                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() - 1);
                 break;
 
             case EAST:
-                newPositionY -= 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() -1);
                 break;
 
             case WEST:
-                newPositionY += 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + 1);
                 break;
 
         }
@@ -63,23 +58,19 @@ public class RoverMovePosition {
 
         switch (currentRoverPosition.getFacingDirection()) {
             case NORTH:
-                newPositionX -= 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
+                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() - 1);
                 break;
 
             case SOUTH:
-                newPositionX += 1;
-                newPositionX = getNextPosition(planetMap, newPositionX);
+                newPositionX = getNextPosition(planetMap, currentRoverPosition.getPositionX() + 1);
                 break;
 
             case EAST:
-                newPositionY += 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() + 1);
                 break;
 
             case WEST:
-                newPositionY -= 1;
-                newPositionY = getNextPosition(planetMap, newPositionY);
+                newPositionY = getNextPosition(planetMap, currentRoverPosition.getPositionY() - 1);
                 break;
         }
         return new RoverPosition(newPositionX, newPositionY, currentRoverPosition.getFacingDirection());
@@ -91,7 +82,9 @@ public class RoverMovePosition {
 
         if (position > highestBoundary) {
             return lowestBoundary;
-        } else if (position < lowestBoundary) {
+        }
+
+        if (position < lowestBoundary) {
             return highestBoundary;
         }
         return position;
